@@ -1,39 +1,38 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-        <div class = "top-frame">
+        <div class = "top flexh orange">
 
-            <div class = "search-frame">
-                <div class = "search-container">
-                    <header><h1>Search</h1></header>
-                    <form>
-                        <input type = "text" placeholder="Search">
-                        <input type = "submit" value = "Submit">
+            <div class = "search flexv yellow">
+                <div class = "wrapper">
+                    <h1 class = "raw search-text">Search</h1>
+                    <form class = " search-input flexv raw">
+                        <input class = "search-bar" type = "text">
+                        <input class = "search-button" type = "submit" value = "Submit">
                     </form>
                 </div>
             </div>
 
-            <div class = "nearby-frame">
-                <header><h2>Nearby</h2></header>
-                <table>
-                    <tr>
-                        <th>Name</th>
-                        <th>City</th>
-                        <th>Age Range</th>
-                    </tr>
+            <div class = "nearby flexv">
+                <h2 class = "raw n_text">Nearby</h2>
+                <div class = " n_items flexv">
                     {% for daycare in nearby %}
-                    <tr>
-                        <td>{{ daycare["facility_name"] }}</td>
-                        <td>{{ daycare["city"] }}</td>
-                        <td>{{ daycare["age_range"] }}</td>
-                    </tr>
+                    <div class = "n_wrap">
+                        <h4 class = "raw n_name">{{ daycare["facility_name"] }}</h4>
+                        <h5 class = "raw n_address">{{ daycare["address"] }}, {{ daycare["city"] }}</h5>
+                        <h6 class = "raw n_sub-item1">Ages: {{ daycare["age_range"] }}</h6>
+                        <div class = "n_sub flexh">
+                            <h6 class = "raw n_sub-item2">Phone: {{ daycare["phone"] }}</h6>
+                            <h6 class = "raw">Email: <a href="">{{ daycare["email"] }}</a></h6>
+                        </div>
+                    </div>
                     {% endfor %}
-                </table>
+                </div>
             </div>
 
         </div>
         
-        <div class = "recent-frame">
+        <div class = "recent orange">
             <header><h2>Recently Viewed</h2></header>
             <table>
                 <tr>

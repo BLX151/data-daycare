@@ -17,6 +17,3 @@ def default(): # Function linked to the routed webpaged
 def about():
     return render_template('about.html')
 
-db.updateDatabase()
-
-
