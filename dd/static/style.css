@@ -1,0 +1,94 @@
+html {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+.page-frame {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-bar {
+    overflow: hidden;
+    background-color: blue;
+    margin: 8px;
+    margin-bottom: 0px;
+}
+
+.nav-bar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.nav-bar a:hover {
+    background-color: blueviolet;
+    color: black;
+}
+
+.content-frame {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    background-color: red;
+    margin: 8px;
+    overflow: auto;
+}
+
+.top-frame {
+    display: flex;
+    height: 70%;
+    flex-direction: row;
+    background-color: orange;
+    margin: 8px;
+}
+
+.search-frame {
+    width: 60%;
+    background-color: yellow;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-container {
+    height: 150px;
+    width: 400px;
+    text-align: center;
+    background-color: pink;
+}
+
+.nearby-frame {
+    width: 40%;
+    background-color: purple;
+    margin-left: 8px;
+}
+
+.recent-frame {
+    height: 30%;
+    background-color: orange;
+    margin: 8px;
+    margin-top: 0px;
+}
+
+h1, h2, h3 {
+    text-align: center
+}
+
+table {
+    width: 100%;
+    text-align: center
+}
+
+p {
+    text-align: center;
+}

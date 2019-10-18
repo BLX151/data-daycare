@@ -1,0 +1,59 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+        <div class = "top-frame">
+
+            <div class = "search-frame">
+                <div class = "search-container">
+                    <header><h1>Search</h1></header>
+                    <form>
+                        <input type = "text" placeholder="Search">
+                        <input type = "submit" value = "Submit">
+                    </form>
+                </div>
+            </div>
+
+            <div class = "nearby-frame">
+                <header><h2>Nearby</h2></header>
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>City</th>
+                        <th>Age Range</th>
+                    </tr>
+                    {% for daycare in nearby %}
+                    <tr>
+                        <td>{{ daycare["facility_name"] }}</td>
+                        <td>{{ daycare["city"] }}</td>
+                        <td>{{ daycare["age_range"] }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+
+        </div>
+        
+        <div class = "recent-frame">
+            <header><h2>Recently Viewed</h2></header>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>City</th>
+                    <th>Age Range</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                </tr>
+                {% for daycare in recent %}
+                <tr>
+                    <td>{{ daycare["facility_name"] }}</td>
+                    <td>{{ daycare["city"] }}</td>
+                    <td>{{ daycare["age_range"] }}</td>
+                    <td>{{ daycare["phone"] }}</td>
+                    <td>{{ daycare["email"] }}</td>
+                    <td>{{ daycare["address"] }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+{% endblock content %}
