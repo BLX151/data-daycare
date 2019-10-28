@@ -17,3 +17,9 @@ def default(): # Function linked to the routed webpaged
 def about():
     return render_template('about.html')
 
+<<<<<<< Updated upstream
+=======
+# db.updateDatabase()
+
+
+>>>>>>> Stashed changes
