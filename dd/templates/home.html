@@ -32,8 +32,15 @@
 
         </div>
         
-        <div class = "recent orange">
-            <header><h2>Recently Viewed</h2></header>
+        <!-- <div class = "recent orange">
+            <h2 class = "recent-title raw">Recently Viewed</h2>
+            
+            {% for daycare in recent %}
+            <div class = "recent-daycare">
+                <h4 class = "raw">{{ daycare["facility_name"] }}</h4>
+            </div>
+            {% endfor %}
+            
             <table>
                 <tr>
                     <th>Name</th>
@@ -54,5 +61,5 @@
                 </tr>
                 {% endfor %}
             </table>
-        </div>
+        </div> -->
 {% endblock content %}
