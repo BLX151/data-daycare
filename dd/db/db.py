@@ -11,8 +11,8 @@ def fetchDatabase():
     request = requests.get(url) # Request is the raw request information
     daycares = request.json() # Convert the request into json data
     updateDatabase(daycares) # Update the .json file 
-    fixedDatabase = fixCasing() # Fix the upper and lowercase shitshow that is the original file
-    updateDatabase(fixedDatabase) # Update the database again with the fixed data
+    updateDatabase(fixCasing()) # Update the database again with the fixed data
+    updateDatabase(indexify())
     
 
 # === Return a dictionary containing the database ===
@@ -27,6 +27,21 @@ def getXElements(x):
     return database[:x]
     # The .json file is just a list of dictionaries.
     # This is split the list from the beginning to the x-th item in the list
+
+def getDaycare(index):
+    database = getDatabase()
+    for daycare in database:
+        if daycare["index"] == index:
+            return daycare
+
+# === Index all of the daycares ===
+def indexify():
+    database = getDatabase() 
+    index = 0 # Initialize an index count
+    for daycare in database: # Run through every daycare in the database
+        daycare["index"] = index # Add a new key 'index' which has a unique value for each daycare
+        index += 1 # Increment the index for the next daycare
+    return database # Return the indexed database
 
 # === Fixes the casing from the original dataset. It doesn't display how we want it to. ===
 # DO NOT TOUCH, THIS WORKS AS EXPECTED AND I DON'T REMEMBER HOW I DID IT
@@ -62,3 +77,4 @@ def fixCasing():
 # daycares = getDatabase()
 # daycares = getXElements(6)
 # print(daycares)
+# print(getDaycare(1))
