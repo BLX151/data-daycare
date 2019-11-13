@@ -2,14 +2,9 @@
     <head>
         <meta charset="UTF-8">
         <link rel = "stylesheet" href = "{{ url_for('static', filename = 'style.css') }}">
+        <title>Data Daycare</title>
 
         {% block head %}
-
-            {% if title %}
-                <title>Data Daycare - {{ title }}</title>
-                {% else %}
-                <title>Data Daycare</title>
-            {% endif %}
 
         {% endblock head %}
     </head>
@@ -17,9 +12,9 @@
     <body class = "raw">
         <div class = "flexv fill">
             <div class = "nav-bar flexh blue">
-                <a class = "nav-button red" href = "{{ url_for('default') }}">Home</a>
-                <a class = "nav-button red" href = "{{ url_for('default') }}">Map</a>
-                <a class = "nav-button red" href = "{{ url_for('default') }}">Directory</a>
+                <a class = "nav-button red" href = "{{ url_for('home') }}">Home</a>
+                <a class = "nav-button red" href = "{{ url_for('map') }}">Map</a>
+                <a class = "nav-button red" href = "{{ url_for('home') }}">Directory</a>
                 <a class = "nav-button red" href = "{{ url_for('about') }}">About</a>
             </div>
     
