@@ -13,13 +13,7 @@ def default(): # Function linked to the routed webpaged
     # Return the html file to be displayed on the routed page
     return render_template('home.html', nearby = db.getXElements(6), recent = db.getXElements(3))
 
+# Routes /about as a webpage, returns the about.html template
 @app.route('/about')
 def about():
     return render_template('about.html')
-
-<<<<<<< Updated upstream
-=======
-# db.updateDatabase()
-
-
->>>>>>> Stashed changes
