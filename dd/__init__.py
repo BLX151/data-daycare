@@ -2,9 +2,12 @@
 # web server logic
 from flask import Flask, render_template, url_for, request
 from .db import db
+from dd.daycare.daycare import daycare
 
 # Instantiate a copy of the Flask class called app
 app = Flask(__name__)
+app.register_blueprint(daycare)
+
 
 # Our base domain page, @app.route creates a webpage at
 # www.ourdomain.com/<routename> which anyone can access
@@ -18,8 +21,6 @@ def default(): # Function linked to the routed webpaged
 def about():
     return render_template('about.html')
 
-from .daycare import daycare
-app.register_blueprint(daycare, url_prefix="/daycare")
 
 
 
