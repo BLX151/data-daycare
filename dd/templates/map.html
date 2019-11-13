@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+<script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+{% endblock head %}
+
+{% block content %}
+<div id="map" style="height: 100%;"></div>
+
+<script type="text/javascript">
+
+    navigator.geolocation.getCurrentPosition(setPosition);
+
+    function setPosition(position)
+    {
+        // The first parameter are the coordinates of the center of the map
+        // The second parameter is the zoom level
+        var map = L.map('map').setView([position.coords.latitude, position.coords.longitude], 15);
+        // {s}, {z}, {x} and {y} are placeholders for map tiles
+        // {x} and {y} are the x/y of where you are on the map
+        // {z} is the zoom level
+        // {s} is the subdomain of cartodb
+        var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>    \
+                          contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
+        });
+
+        const database = {{ database | tojson }};
+
+        for (i = 0; i < database.length; i++)
+        {
+            if ('location' in database[i])
+            {
+                console.log(database[i].facility_name);
+                L.marker([database[i].location.latitude, database[i].location.longitude]).addTo(map)
+                .bindPopup(database[i].facility_name)
+                .openPopup();
+            }
+        }
+        
+        // Now add the layer onto the map
+        map.addLayer(layer);
+    }    
+    
+    
+</script>
+{% endblock content %}
