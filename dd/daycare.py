@@ -4,10 +4,10 @@ from .db import db
 
 daycare = Blueprint('daycare', __name__)
 
-allDaycares = db.fetchDatabase()
+allDaycares = db.getDatabase()
 
 @daycare.url_value_preprocessor
 
 @daycare.route("/<daycare_index>")
 def info(daycare_index):
-    return render_template("daycare.html", daycare_info = db.)
+    return render_template("daycare.html", daycare_info=allDaycares[daycare_index])
