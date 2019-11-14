@@ -1,0 +1,35 @@
+/*  THIS IS LESS OF A MESS OF BULLSHIT NOW
+    Before you attempt to do anything with anything here, please come to me
+    and ask me how this works and how I have everything laid out. I'm not 
+    even going to attempt to comment any of this bullshit out because it's
+    all worthless.
+    
+    Thanks for coming to me TED Talk. - Tyler */
+
+.raw {margin:0px; padding:0px; border:0px;}
+.fill {height:100%; width:100%;}
+
+.flexv {display:flex; flex-direction:column;}
+.flexh {display:flex; flex-direction:row;}
+
+.wrapper {margin:5px 5px;}
+
+.blue   {background-color:blue;}
+.red    {background-color:red;}
+.yellow {background-color:yellow;}
+.orange {background-color:orange;}
+
+h1 {font-size:50; text-align:center;}
+h2 {font-size:40; text-align:center;}
+h3 {font-size:28; text-align:center;}
+h4 {font-size:20; text-align:center;}
+h5 {font-size:15; text-align:center;}
+h6 {font-size:12; text-align:center;}
+p  {text-align:center;}
+
+.nav-bar {justify-content:center;}
+.nav-bar a:hover {background-color:blueviolet; color:black;}
+.nav-button {display: block; padding:8px 15px;font-size:25px; color:white; text-decoration:none; margin-left:1px; margin-right:1px;}
+.content {flex-grow:1;}
+
+

@@ -1,5 +1,11 @@
 {% extends 'layout.html' %}
 
+{% block head %}
+
+    <link rel = "stylesheet" href = "{{ url_for('static', filename = 'home.css') }}">
+
+{% endblock head %}
+
 {% block content %}
         <div class = "top flexh orange">
 
