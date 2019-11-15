@@ -8,8 +8,7 @@ def updateDatabase(daycares):
 # === Get an updated version of the data from the API ===
 def fetchDatabase():
     url = "https://data.novascotia.ca/resource/3j9v-yimg.json" # URL for API fetching
-    request = requests.get(url) # Request is the raw request information
-    daycares = request.json() # Convert the request into json data
+    daycares = requests.get(url).json() # Request is the raw request information
     updateDatabase(daycares) # Update the .json file 
     updateDatabase(fixCasing()) # Update the database again with the fixed data
     updateDatabase(indexify())
