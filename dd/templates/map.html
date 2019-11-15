@@ -32,7 +32,6 @@
             {
                 if ('location' in database[i])
                 {
-                    console.log(database[i].facility_name);
                     L.marker([database[i].location.latitude, database[i].location.longitude]).addTo(map)
                     .bindPopup(database[i].facility_name)
                 }
