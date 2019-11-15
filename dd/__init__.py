@@ -3,7 +3,7 @@
 from flask import Flask, render_template, url_for, request
 from dd.db import db
 from dd.daycare.daycare import daycare
-import requests, geopy.location
+import requests# geopy.location
 
 app = Flask(__name__) # Instantiate a copy of the Flask class called app
 app.register_blueprint(daycare) # Register the daycare blueprint into the app
