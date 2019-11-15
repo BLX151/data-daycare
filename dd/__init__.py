@@ -8,29 +8,24 @@ import requests, geopy.location
 app = Flask(__name__) # Instantiate a copy of the Flask class called app
 app.register_blueprint(daycare) # Register the daycare blueprint into the app
 
-def getDistance(coords1, coords2):
-    return geopy.distance.vincenty(coords1, coords2).km
+# def getDistance(coords1, coords2):
+#     return geopy.distance.vincenty(coords1, coords2).km
 
-def findNearby(user_lat, user_long):
-    database = db.getDatabase()
-    nearby = [
-        {"index": -1, "distance": 99999},
-        {"index": -1, "distance": 99999},
-        {"index": -1, "distance": 99999},
-        {"index": -1, "distance": 99999},
-        {"index": -1, "distance": 99999},
-    ]
-    for daycare in database:
-        distance = getDistance( (user_lat,user_long), (daycare.location.latitude,darecare.location.latitude) )
-        if (distance < nearby[4])
-        {
-            for (i = nearby.length; i > 0; i -= 1)
-            {
-                
-            }
-        }
+# def findNearby(user_lat, user_long):
+#     database = db.getDatabase()
+#     nearby = [
+#         {"index": -1, "distance": 99999},
+#         {"index": -1, "distance": 99999},
+#         {"index": -1, "distance": 99999},
+#         {"index": -1, "distance": 99999},
+#         {"index": -1, "distance": 99999},
+#     ]
+#     for daycare in database:
+#         distance = getDistance( (user_lat,user_long), (daycare.location.latitude,darecare.location.latitude) )
+#         if (distance < nearby[4]):
+#             for (i = nearby.length; i > 0; i -= 1)
         
-    return nearby
+#     return nearby
 
 # Our base domain page, @app.route creates a webpage at
 # www.ourdomain.com/<routename> which anyone can access
@@ -38,11 +33,11 @@ def findNearby(user_lat, user_long):
 # The home route
 @app.route('/home')
 def home(): # Function linked to the routed webpaged
-    user_ip = requests.get('https://get.geojs.io/v1/ip.json').json()['ip']
-    user_geoData = requests.get('https://get.geojs.io/v1/ip/geo/' + user_ip + '.json').json()
-    nearby = findNearby(user_geoData['latitude'], user_geoData['longitude'])
+    # user_ip = requests.get('https://get.geojs.io/v1/ip.json').json()['ip']
+    # user_geoData = requests.get('https://get.geojs.io/v1/ip/geo/' + user_ip + '.json').json()
+    # nearby = findNearby(user_geoData['latitude'], user_geoData['longitude'])
 
-    return render_template('home.html', nearby = nearby)
+    return render_template('home.html', nearby = db.getXElements(5))
     # Return the html file to be displayed on the routed page
     # nearby variable will be availble to access inside the html file
 
