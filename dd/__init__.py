@@ -35,6 +35,12 @@ def directory():
     return render_template("directory.html", database = db.getDatabase())
     # database variable will be accessable from within directory.html
 
+@app.route('/filterDirectory', methods = ["POST", "GET"])
+def filterDirectory():
+    filters = {}
+    filters["county"] = request.form.get('county')
+    return filters
+
 # The about route
 @app.route('/about')
 def about():
