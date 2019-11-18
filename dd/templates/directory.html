@@ -12,6 +12,9 @@
     <div class = "flexh">
         <div class = "directory flexv">
             <div class = "daycare-box red">
+            <script>
+            document.onload(showAllDaycares());
+            </script>
             <!--This is where the daycares are displayed-->
             <div id="daycareSpot"></div>
             </div>
@@ -217,7 +220,6 @@
             <input type="checkbox" id="unannouncedInspection" checked> Unannounced Annual Inspection Recorded </input>
             </div>
 
-            <div>
 
 
             <div>
@@ -267,6 +269,27 @@
         document.getElementById("daycareSpot").innerHTML = display;
     }
 
+    function showAllDaycares(){
+        database = {{ database | tojson }};
+
+        for (i = 0; i<database.length;i++)
+        {
+            filteredDaycareArray.push(i);
+        }
+
+        var display;
+        for (i=0 ; i<filteredDaycareArray.length ; i++)
+        {
+            display = display + "<h4>"+ database[filteredDaycareArray[i]].facility_name+"</h4><br>";
+            display = display + "<h6>Index:"+ database[filteredDaycareArray[i]].index+"</h6><br>"
+        }
+        if (filteredDaycareArray.length==0)
+        {
+            display = "<div><h4> There are no Daycares that match your selection <div><h4>";
+        }
+        document.getElementById("daycareSpot").innerHTML = display;
+    }
+
     // This function is where the filtering happens. It will also call
     // the above functions. This function is triggered when the submit
     // button is pressed and will reset each time it is pressed. 
@@ -276,12 +299,12 @@
         // reset the variables for each filtering
         filteredDaycareArray = [];
         daycaresToDelete = [];
-        database = {{ database | tojson }};
+        //database = {{ database | tojson }};
 
-        for (i = 0; i<database.length;i++)
+        /*for (i = 0; i<database.length;i++)
         {
             filteredDaycareArray.push(i);
-        }
+        }*/
 
         var elementCounty = document.getElementById("county");
         var selectedCounty = elementCounty.options[elementCounty.selectedIndex].value;
@@ -584,7 +607,7 @@
         
         
     }
-        
+    document.onload(showAllDaycares());
     </script>
 
 {% endblock content %}
