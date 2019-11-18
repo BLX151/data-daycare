@@ -37,188 +37,192 @@
             <p id="testing"> </p>
             <p id="testing2"> </p>
             <p id="testing3"> </p>
-            <div>
-                <select id="county">
-                    <option value="noSelection"> Any County </option>
-                    <option value="Antigonish County"> Antigonish </option>
-                    <option value="Halifax County"> Halifax </option>
-                    <option value="Cumberland County"> Cumberland </option>
-                    <option value="Kings County"> Kings </option>
-                    <option value="Cape Breton County"> Cape Breton </option>
-                    <option value="Colchester County"> Colchester </option>
-                    <option value="Richmond County"> Richmond </option>
-                    <option value="Shelburne County"> Shelburne </option>
-                    <option value="Annapolis County"> Annapolis </option>
-                    <option value="Yarmouth County"> Yarmouth </option>
-                    <option value="Queens County"> Queens </option>
-                    <option value="Inverness County"> Inverness </option>
-                    <option value="Pictou County"> Pictou </option>
-                    <option value="Lunenburg County"> Lunenburg </option>
-                    <option value="Hants County"> Hants </option>
-                    <option value="Digby County"> Digby </option>
-                </select>
-            </div>
+            
+            <form method = "POST" action = "{{ url_for('filterDirectory') }}">
+                <div>
+                    <select name = "county" id="county">
+                        <option value="noSelection"> Any County </option>
+                        <option value="Antigonish County"> Antigonish </option>
+                        <option value="Halifax County"> Halifax </option>
+                        <option value="Cumberland County"> Cumberland </option>
+                        <option value="Kings County"> Kings </option>
+                        <option value="Cape Breton County"> Cape Breton </option>
+                        <option value="Colchester County"> Colchester </option>
+                        <option value="Richmond County"> Richmond </option>
+                        <option value="Shelburne County"> Shelburne </option>
+                        <option value="Annapolis County"> Annapolis </option>
+                        <option value="Yarmouth County"> Yarmouth </option>
+                        <option value="Queens County"> Queens </option>
+                        <option value="Inverness County"> Inverness </option>
+                        <option value="Pictou County"> Pictou </option>
+                        <option value="Lunenburg County"> Lunenburg </option>
+                        <option value="Hants County"> Hants </option>
+                        <option value="Digby County"> Digby </option>
+                    </select>
+                </div>
+    
+                <div>
+                    <select id="daycare_type">
+                        <option value="noSelection"> Any Type </option>
+                        <option value="FamilyHome"> Family Home </option>
+                        <option value="DayCare"> Day Care </option>
+                    </select>
+                </div>
+    
+                <div>
+                    <select id="city">
+                        <option value="noSelection"> Any City </option>
+                        <option value="Westville"> Westville </option>
+                        <option value="Cfb Greenwood"> Cfb Greenwood </option>
+                        <option value="Antigonish"> Antigonish </option>
+                        <option value="Barrington Passage"> Barrington Passage </option>
+                        <option value="Hammonds Plains"> Hammonds Plains </option>
+                        <option value="Debert"> Debert </option>
+                        <option value="Port Hawkesbury"> Port Hawkesbury </option>
+                        <option value="Bridgewater"> Bridgewater </option>
+                        <option value="Parrsboro"> Parrsboro </option>
+                        <option value="Truro"> Truro </option>
+                        <option value="Cole Harbour"> Cole Harbour </option>
+                        <option value="Clark's Harbour"> Clark's Harbour </option>
+                        <option value="Enfield"> Enfield </option>
+                        <option value="Yarmouth"> Yarmouth </option>
+                        <option value="Lawrencetown"> Lawrencetown </option>
+                        <option value="Dartmouth"> Dartmouth </option>
+                        <option value="Shubenacadie"> Shubenacadie </option>
+                        <option value="St. Peter's"> St. Peter's </option>
+                        <option value="Salmon River"> Salmon River </option>
+                        <option value="Milton Highlands"> Milton Highlands </option>
+                        <option value="Hatchet Lake"> Hatchet Lake </option>
+                        <option value="Lockeport"> Lockeport </option>
+                        <option value="Dutch Settlement"> Dutch Settlement </option>
+                        <option value="Chester"> Chester </option>
+                        <option value="Oxford"> Oxford </option>
+                        <option value="Brookdale"> Brookdale </option>
+                        <option value="Halifax"> Halifax </option>
+                        <option value="Shearwater"> Shearwater </option>
+                        <option value="Stoney Island"> Stoney Island </option>
+                        <option value="Mount Pleasant"> Mount Pleasant </option>
+                        <option value="Lunenburg"> Lunenburg </option>
+                        <option value="Westmount"> Westmount </option>
+                        <option value="Tatamagouche"> Tatamagouche </option>
+                        <option value="Prospect Bay"> Prospect Bay </option>
+                        <option value="Chéticamp"> Chéticamp </option>
+                        <option value="Bedford"> Bedford </option>
+                        <option value="Pictou"> Pictou </option>
+                        <option value="Upper Tantallon"> Upper Tantallon </option>
+                        <option value="Hubley"> Hubley </option>
+                        <option value="Whycocomagh"> Whycocomagh </option>
+                        <option value="Valley"> Valley </option>
+                        <option value="North Preston"> North Preston </option>
+                        <option value="Lower South River"> Lower South River </option>
+                        <option value="Canning"> Canning </option>
+                        <option value="Cambridge"> Cambridge </option>
+                        <option value="Berwick"> Berwick </option>
+                        <option value="Trenton"> Trenton </option>
+                        <option value="Arichat"> Arichat </option>
+                        <option value="New Ross"> New Ross </option>
+                        <option value="Brookfield"> Brookfield </option>
+                        <option value="Middle Sackville"> Middle Sackville </option>
+                        <option value="Kentville"> Kentville </option>
+                        <option value="Bible Hill"> Bible Hill </option>
+                        <option value="Brooklyn"> Brooklyn </option>
+                        <option value="Mira Road"> Mira Road </option>
+                        <option value="Caledonia"> Caledonia </option>
+                        <option value="Porters Lake"> Porters Lake </option>
+                        <option value="Gaspereau"> Gaspereau </option>
+                        <option value="Wilmot"> Wilmot </option>
+                        <option value="Windsor"> Windsor </option>
+                        <option value="East Preston"> East Preston </option>
+                        <option value="Waverley"> Waverley </option>
+                        <option value="Port Williams"> Port Williams </option>
+                        <option value="Digby"> Digby </option>
+                        <option value="Stellarton"> Stellarton </option>
+                        <option value="Shelburne"> Shelburne </option>
+                        <option value="Beaver Bank"> Beaver Bank </option>
+                        <option value="Masstown"> Masstown </option>
+                        <option value="Little Bras D'or"> Little Bras D'or </option>
+                        <option value="Sydney Mines"> Sydney Mines </option>
+                        <option value="Lantz"> Lantz </option>
+                        <option value="Wolfville Ridge"> Wolfville Ridge </option>
+                        <option value="Hubbards"> Hubbards </option>
+                        <option value="Middleton"> Middleton </option>
+                        <option value="Lake Echo"> Lake Echo </option>
+                        <option value="Greenwood"> Greenwood </option>
+                        <option value="Meteghan"> Meteghan </option>
+                        <option value="Grand Lake Road"> Grand Lake Road </option>
+                        <option value="New Glasgow"> New Glasgow </option>
+                        <option value="West Pubnico"> West Pubnico </option>
+                        <option value="Auburn"> Auburn </option>
+                        <option value="West Gore"> West Gore </option>
+                        <option value="Timberlea"> Timberlea </option>
+                        <option value="Liverpool"> Liverpool </option>
+                        <option value="Osborne Harbour"> Osborne Harbour </option>
+                        <option value="Stewiacke"> Stewiacke </option>
+                        <option value="Middle Musquodoboit"> Middle Musquodoboit </option>
+                        <option value="Springhill"> Springhill </option>
+                        <option value="Lower Sackville"> Lower Sackville </option>
+                        <option value="Eastern Passage"> Eastern Passage </option>
+                        <option value="Coxheath"> Coxheath </option>
+                        <option value="Cookville"> Cookville </option>
+                        <option value="Coldbrook"> Coldbrook </option>
+                        <option value="Sydney River"> Sydney River </option>
+                        <option value="Meteghan Centre"> Meteghan Centre </option>
+                        <option value="Post Road"> Post Road </option>
+                        <option value="New Waterford"> New Waterford </option>
+                        <option value="Beechville"> Beechville </option>
+                        <option value="Howie Centre"> Howie Centre </option>
+                        <option value="Tusket"> Tusket </option>
+                    </select>
+                </div>
+    
+                <div>
+                    <select id="age1">
+                        <option value="noSelection"> Any Age Group </option>
+                        <option value="age_infant"> Infant </option>
+                        <option value="age_toddler"> Toddler </option>
+                        <option value="age_preschool"> Preschool </option>
+                        <option value="age_school_age"> School </option>
+                    </select>
+                </div>
+    
+                <div>
+                    <select id="age2">
+                        <option value="noSelection"> Any Age Group </option>
+                        <option value="age_infant"> Infant </option>
+                        <option value="age_toddler"> Toddler </option>
+                        <option value="age_preschool"> Preschool </option>
+                        <option value="age_school_age"> School </option>
+                    </select>
+                </div>
+    
+                <div>
+                    <select id="capacity">
+                        <option value="noSelection"> Any Size Capacity </option>
+                        <option value="20"> 20 and Under </option>
+                        <option value="40"> 21 to 40 </option>
+                        <option value="60"> 41 to 60 </option>
+                        <option value="80"> 61 to 80 </option>
+                        <option value="100"> 81 to 100 </option>
+                        <option value="101"> 101 and Above </option>
+                    </select>
+                </div>
+    
+    
+                <div>
+                <input type="checkbox" id="annualInspection" checked> Annual Inspection Recorded </input>
+                </div>
+    
+                <div>
+                <input type="checkbox" id="unannouncedInspection" checked> Unannounced Annual Inspection Recorded </input>
+                </div>
+    
+    
+                <button type = "submit">Submit</button>
 
-            <div>
-                <select id="daycare_type">
-                    <option value="noSelection"> Any Type </option>
-                    <option value="FamilyHome"> Family Home </option>
-                    <option value="DayCare"> Day Care </option>
-                </select>
-            </div>
-
-            <div>
-                <select id="city">
-                    <option value="noSelection"> Any City </option>
-                    <option value="Westville"> Westville </option>
-                    <option value="Cfb Greenwood"> Cfb Greenwood </option>
-                    <option value="Antigonish"> Antigonish </option>
-                    <option value="Barrington Passage"> Barrington Passage </option>
-                    <option value="Hammonds Plains"> Hammonds Plains </option>
-                    <option value="Debert"> Debert </option>
-                    <option value="Port Hawkesbury"> Port Hawkesbury </option>
-                    <option value="Bridgewater"> Bridgewater </option>
-                    <option value="Parrsboro"> Parrsboro </option>
-                    <option value="Truro"> Truro </option>
-                    <option value="Cole Harbour"> Cole Harbour </option>
-                    <option value="Clark's Harbour"> Clark's Harbour </option>
-                    <option value="Enfield"> Enfield </option>
-                    <option value="Yarmouth"> Yarmouth </option>
-                    <option value="Lawrencetown"> Lawrencetown </option>
-                    <option value="Dartmouth"> Dartmouth </option>
-                    <option value="Shubenacadie"> Shubenacadie </option>
-                    <option value="St. Peter's"> St. Peter's </option>
-                    <option value="Salmon River"> Salmon River </option>
-                    <option value="Milton Highlands"> Milton Highlands </option>
-                    <option value="Hatchet Lake"> Hatchet Lake </option>
-                    <option value="Lockeport"> Lockeport </option>
-                    <option value="Dutch Settlement"> Dutch Settlement </option>
-                    <option value="Chester"> Chester </option>
-                    <option value="Oxford"> Oxford </option>
-                    <option value="Brookdale"> Brookdale </option>
-                    <option value="Halifax"> Halifax </option>
-                    <option value="Shearwater"> Shearwater </option>
-                    <option value="Stoney Island"> Stoney Island </option>
-                    <option value="Mount Pleasant"> Mount Pleasant </option>
-                    <option value="Lunenburg"> Lunenburg </option>
-                    <option value="Westmount"> Westmount </option>
-                    <option value="Tatamagouche"> Tatamagouche </option>
-                    <option value="Prospect Bay"> Prospect Bay </option>
-                    <option value="Chéticamp"> Chéticamp </option>
-                    <option value="Bedford"> Bedford </option>
-                    <option value="Pictou"> Pictou </option>
-                    <option value="Upper Tantallon"> Upper Tantallon </option>
-                    <option value="Hubley"> Hubley </option>
-                    <option value="Whycocomagh"> Whycocomagh </option>
-                    <option value="Valley"> Valley </option>
-                    <option value="North Preston"> North Preston </option>
-                    <option value="Lower South River"> Lower South River </option>
-                    <option value="Canning"> Canning </option>
-                    <option value="Cambridge"> Cambridge </option>
-                    <option value="Berwick"> Berwick </option>
-                    <option value="Trenton"> Trenton </option>
-                    <option value="Arichat"> Arichat </option>
-                    <option value="New Ross"> New Ross </option>
-                    <option value="Brookfield"> Brookfield </option>
-                    <option value="Middle Sackville"> Middle Sackville </option>
-                    <option value="Kentville"> Kentville </option>
-                    <option value="Bible Hill"> Bible Hill </option>
-                    <option value="Brooklyn"> Brooklyn </option>
-                    <option value="Mira Road"> Mira Road </option>
-                    <option value="Caledonia"> Caledonia </option>
-                    <option value="Porters Lake"> Porters Lake </option>
-                    <option value="Gaspereau"> Gaspereau </option>
-                    <option value="Wilmot"> Wilmot </option>
-                    <option value="Windsor"> Windsor </option>
-                    <option value="East Preston"> East Preston </option>
-                    <option value="Waverley"> Waverley </option>
-                    <option value="Port Williams"> Port Williams </option>
-                    <option value="Digby"> Digby </option>
-                    <option value="Stellarton"> Stellarton </option>
-                    <option value="Shelburne"> Shelburne </option>
-                    <option value="Beaver Bank"> Beaver Bank </option>
-                    <option value="Masstown"> Masstown </option>
-                    <option value="Little Bras D'or"> Little Bras D'or </option>
-                    <option value="Sydney Mines"> Sydney Mines </option>
-                    <option value="Lantz"> Lantz </option>
-                    <option value="Wolfville Ridge"> Wolfville Ridge </option>
-                    <option value="Hubbards"> Hubbards </option>
-                    <option value="Middleton"> Middleton </option>
-                    <option value="Lake Echo"> Lake Echo </option>
-                    <option value="Greenwood"> Greenwood </option>
-                    <option value="Meteghan"> Meteghan </option>
-                    <option value="Grand Lake Road"> Grand Lake Road </option>
-                    <option value="New Glasgow"> New Glasgow </option>
-                    <option value="West Pubnico"> West Pubnico </option>
-                    <option value="Auburn"> Auburn </option>
-                    <option value="West Gore"> West Gore </option>
-                    <option value="Timberlea"> Timberlea </option>
-                    <option value="Liverpool"> Liverpool </option>
-                    <option value="Osborne Harbour"> Osborne Harbour </option>
-                    <option value="Stewiacke"> Stewiacke </option>
-                    <option value="Middle Musquodoboit"> Middle Musquodoboit </option>
-                    <option value="Springhill"> Springhill </option>
-                    <option value="Lower Sackville"> Lower Sackville </option>
-                    <option value="Eastern Passage"> Eastern Passage </option>
-                    <option value="Coxheath"> Coxheath </option>
-                    <option value="Cookville"> Cookville </option>
-                    <option value="Coldbrook"> Coldbrook </option>
-                    <option value="Sydney River"> Sydney River </option>
-                    <option value="Meteghan Centre"> Meteghan Centre </option>
-                    <option value="Post Road"> Post Road </option>
-                    <option value="New Waterford"> New Waterford </option>
-                    <option value="Beechville"> Beechville </option>
-                    <option value="Howie Centre"> Howie Centre </option>
-                    <option value="Tusket"> Tusket </option>
-                </select>
-            </div>
-
-            <div>
-                <select id="age1">
-                    <option value="noSelection"> Any Age Group </option>
-                    <option value="age_infant"> Infant </option>
-                    <option value="age_toddler"> Toddler </option>
-                    <option value="age_preschool"> Preschool </option>
-                    <option value="age_school_age"> School </option>
-                </select>
-            </div>
-
-            <div>
-                <select id="age2">
-                    <option value="noSelection"> Any Age Group </option>
-                    <option value="age_infant"> Infant </option>
-                    <option value="age_toddler"> Toddler </option>
-                    <option value="age_preschool"> Preschool </option>
-                    <option value="age_school_age"> School </option>
-                </select>
-            </div>
-
-            <div>
-                <select id="capacity">
-                    <option value="noSelection"> Any Size Capacity </option>
-                    <option value="20"> 20 and Under </option>
-                    <option value="40"> 21 to 40 </option>
-                    <option value="60"> 41 to 60 </option>
-                    <option value="80"> 61 to 80 </option>
-                    <option value="100"> 81 to 100 </option>
-                    <option value="101"> 101 and Above </option>
-                </select>
-            </div>
-
-
-            <div>
-            <input type="checkbox" id="annualInspection" checked> Annual Inspection Recorded </input>
-            </div>
-
-            <div>
-            <input type="checkbox" id="unannouncedInspection" checked> Unannounced Annual Inspection Recorded </input>
-            </div>
-
-
-
-            <div>
-                <button onclick="databaseFilter()"> Submit </button>
-            </div>
+                <!-- <div>
+                    <button onclick="databaseFilter()"> Submit </button>
+                </div> -->
+            </form>
         </div>
         </div>
         <!-- This is where most of the functionality of filtering
@@ -297,6 +301,7 @@
             filteredDaycareArray = [];
             daycaresToDelete = [];
 
+            // What does this loop do? -Tyler
             for (i = 0; i<database.length;i++)
             {
                 filteredDaycareArray.push(i);
@@ -304,6 +309,28 @@
 
             var elementCounty = document.getElementById("county");
             var selectedCounty = elementCounty.options[elementCounty.selectedIndex].value;
+
+            var elementType = document.getElementById("daycare_type");
+            var selectedType = elementType.options[elementType.selectedIndex].value;
+
+            var elementCity = document.getElementById("city");
+            var selectedCity = elementCity.options[elementCity.selectedIndex].value;
+
+            var elementAnalInspection = document.getElementById("annualInspection");
+
+            var elementUnaInspection = document.getElementById("unannouncedInspection");
+
+            var elementAge = document.getElementById("age1");
+            var selectedAge = elementAge.options[elementAge.selectedIndex].value;
+            var no = "No";
+
+            var elementAge2 = document.getElementById("age2");
+            var selectedAge2 = elementAge2.options[elementAge2.selectedIndex].value;
+            var no = "No";
+
+            var elementCapacity = document.getElementById("capacity");
+            var selectedCapacity = elementCapacity.options[elementCapacity.selectedIndex].value;
+            var currentDaycareCapacity;
 
             // if a county has not been selected and is still on
             // the "Choose a county" selection
@@ -330,8 +357,7 @@
             }
             
 
-            var elementType = document.getElementById("daycare_type");
-            var selectedType = elementType.options[elementType.selectedIndex].value;
+            
 
             // check to see that the type of facility has been selected
             if ((selectedType.localeCompare("noSelection")!=0))
@@ -367,8 +393,7 @@
                 filteredDaycareArray = updateDaycares();
             }
 
-            var elementCity = document.getElementById("city");
-            var selectedCity = elementCity.options[elementCity.selectedIndex].value;
+            
 
             window.alert(filteredDaycareArray);
 
@@ -389,7 +414,6 @@
             }
 
 
-            var elementAnalInspection = document.getElementById("annualInspection");
             if (elementAnalInspection.checked)
             {
                 for (i = 0; i < filteredDaycareArray.length ; i++)
@@ -418,7 +442,7 @@
             }
 
 
-            var elementUnaInspection = document.getElementById("unannouncedInspection");
+           
             if (elementUnaInspection.checked)
             {
                 for (i = 0; i < filteredDaycareArray.length ; i++)
@@ -446,9 +470,7 @@
                 filteredDaycareArray = updateDaycares();
             }
 
-            var elementAge = document.getElementById("age1");
-            var selectedAge = elementAge.options[elementAge.selectedIndex].value;
-            var no = "No";
+
             if ((selectedAge.localeCompare("noSelection")!=0))
             {
                 for (i=0 ; i<filteredDaycareArray.length ; i++)
@@ -485,9 +507,7 @@
                 filteredDaycareArray = updateDaycares();
             }
 
-            var elementAge2 = document.getElementById("age2");
-            var selectedAge2 = elementAge2.options[elementAge2.selectedIndex].value;
-            var no = "No";
+
             if ((selectedAge2.localeCompare("noSelection")!=0))
             {
                 for (i=0 ; i<filteredDaycareArray.length ; i++)
@@ -525,9 +545,7 @@
             }
         
 
-            var elementCapacity = document.getElementById("capacity");
-            var selectedCapacity = elementCapacity.options[elementCapacity.selectedIndex].value;
-            var currentDaycareCapacity;
+
             if(selectedCapacity.localeCompare("noSelection")!=0)
             {
                 for (i=0 ; i<filteredDaycareArray.length ; i++)
