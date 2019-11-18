@@ -11,7 +11,7 @@ def fetchDatabase():
     url = "https://data.novascotia.ca/resource/3j9v-yimg.json" # URL for API fetching
     daycares = requests.get(url).json() # Request is the raw request information
     updateDatabase(daycares) # Update the .json file 
-    updateDatabase(fixCasing()) # Update the database again with the fixed data
+    updateDatabase(fixHorribleFormatting()) # Update the database again with the fixed data
     updateDatabase(indexify())
     
 
@@ -28,6 +28,7 @@ def getXElements(x):
     # The .json file is just a list of dictionaries.
     # This is split the list from the beginning to the x-th item in the list
 
+# === Get the daycare with the specific index
 def getDaycare(index):
     database = getDatabase()
     for daycare in database:
@@ -43,83 +44,81 @@ def indexify():
         index += 1 # Increment the index for the next daycare
     return database # Return the indexed database
 
-# Calculates the distance between two poistions, returns distance
+# === Calculates the distance between two coods  ==
 def getDistance(lat1, lon1, lat2, lon2):
     R = 6373.0  # approximate radius of earth in km
     lat1 = radians(float(lat1)) # Must convert
-    lat2 = radians(float(lat2))
-    lon1 = radians(float(lon1)) # these all to
-    lon2 = radians(float(lon2)) #floats then radians
+    lat2 = radians(float(lat2)) # all of these
+    lon1 = radians(float(lon1)) # into floats
+    lon2 = radians(float(lon2)) # then to radians
     dlon = lon2 - lon1 # Get difference between longitudes
     dlat = lat2 - lat1 # Get difference between latitudes
     a = sin(dlat / 2)**2 + cos(lat1) * cos(lat2) * sin(dlon / 2)**2
     c = 2 * atan2(sqrt(a), sqrt(1 - a))
     # ^^^^^^^^^^^^^^ DO FANCY MATHS IDC ABOUT ^^^^^^^^^^^^^^^^^^^^^^
-    return R * c
+    return R * c # Return the distance between the two coords
 
-# Method to sort inputted array of dictionaries with "distance" key by distance
-# THIS IS A PEICE OF SHIT, don't touch
+# === Sort inputed array by nearest distance ===
+# THIS IS A PEICE OF SHIT, don't touch, it works somehow
+# could be refactored so it will sort by any term
 def sortByDistance(nearby):
-    notSorted = True
-    noChange = True
-    # print("LENGTH = " + str(len(nearby)), file=sys.stderr)
-    i = 0
-    while (notSorted):
-        noChange = True
-        # print("INDEX" + str(i), file=sys.stderr)
+    notSorted, noChange, i = True, True, 0 # Set conditional variables
+    while (notSorted): # As long as the list is not sorted
+        noChange = True # Reset the noChange to default
+        # If reach end of list and noChange has happened, then the list
+        # must be sorted
         if (i+1 == len(nearby) and noChange):
-            # print("SORTED", file=sys.stderr)
-            break
+            break # Exit the loop
+        # If end of list and list is not sorted, reset sort again
         if (i+1 >= len(nearby) and notSorted):
-            i = 0
-            # print("NOT SORTED", file=sys.stderr)
-            continue
+            i = 0 # Reset the index to 0
+            continue # Skip to next loop
+        # If current daycare is closer than next daycare, skip
         if (int(nearby[i]["distance"]) <= int(nearby[i+1]["distance"])):
             i += 1
-            # print("SKIP", file=sys.stderr)
             continue
+        # If current daycare is further than next daycare, swap
         if (int(nearby[i]["distance"]) >= int(nearby[i+1]["distance"])):
             temp = nearby[i+1]
             nearby[i+1] = nearby[i]
             nearby[i] = temp
             i += 1
-            noChange = False
-            # print("SWAP", file=sys.stderr)
+            noChange = False # Indicate a change was made
             continue
-    return nearby
+    return nearby # Return the sorted array
 
-# Controller function to get the
+# === Get an array with the closest daycares ===
 def getByDistance(maxDistance, amount, user_geoData):
-    userlat = user_geoData["latitude"]
-    userlon = user_geoData["longitude"]
     database = getDatabase()
-    nearby = []
+    nearby = [] # Empty list
     for daycare in database:
-        if ('location' in daycare):
-            distance = getDistance(userlat, userlon, daycare["location"]["latitude"], daycare["location"]["longitude"])
-            # print(distance, file=sys.stderr)
-            if (distance < maxDistance):
-                daycare["distance"] = distance
-                nearby.append(daycare)
-    # print("SORTING NOW", file=sys.stderr)
-    nearby = sortByDistance(nearby)
-    return nearby[:amount]
+        if ('location' in daycare): # Check to make sure it has a location
+            distance = getDistance( # Get the distance between the two coords
+                user_geoData["latitude"], user_geoData["longitude"], # User lat and lon
+                daycare["location"]["latitude"], daycare["location"]["longitude"]) # Daycare lat and lon
+            if (distance < maxDistance): # If the distance is less than maximum allowed distance
+                daycare["distance"] = distance # Add a new key 'distance' to daycare
+                nearby.append(daycare) # Append it to empty list
+    nearby = sortByDistance(nearby) # Sort this list by distance
+    return nearby[:amount] # Return on the first 'amount' of entires (i.e. 5)
 
 # === Fixes the casing from the original dataset. It doesn't display how we want it to. ===
 # DO NOT TOUCH, THIS WORKS AS EXPECTED AND I DON'T REMEMBER HOW I DID IT
-def fixCasing():
+def fixHorribleFormatting():
     database = getDatabase()
     for daycare in database:
+        if ('(' in daycare['facility_name'] ):
+            name = daycare['facility_name']
+            daycare['facility_name'] = name[:name.rfind('(') - 1]
         split = daycare['city'].split()
         city = ""
         for word in split:
             word = word.lower().capitalize()
             if city == "":
-                city = city + word
+                city += word
             else:
-                city = city + " " + word
+                city +=  " " + word
         daycare['city'] = city
-    for daycare in database:
         split = daycare['address'].split()
         address = ""
         for word in split:
@@ -127,9 +126,9 @@ def fixCasing():
             if word.endswith("."):
                 word = word[:-1]
             if address == "":
-                address = address + word
+                address += word
             else:
-                address = address + " " + word
+                address += " " + word
         daycare['address'] = address
     return database
 # This is a spaghetti mess...

@@ -112,7 +112,7 @@
     "index": 3
 }, {
     "facility_identifier": "2894399",
-    "facility_name": "Cunard Street Children's Centre (The)",
+    "facility_name": "Cunard Street Children's Centre",
     "facility_type": "Day Care Facility",
     "county": "Halifax County",
     "phone": "902-423-6799",
@@ -331,7 +331,7 @@
     "index": 11
 }, {
     "facility_identifier": "2897903",
-    "facility_name": "Duck Duck Goose Children's Centre Limited (Mount Edward)",
+    "facility_name": "Duck Duck Goose Children's Centre Limited",
     "facility_type": "Day Care Facility",
     "county": "Halifax County",
     "phone": "902-462-2824",
@@ -438,7 +438,7 @@
     "index": 15
 }, {
     "facility_identifier": "2900500",
-    "facility_name": "Garderie le Petit Voilier de Bois-Joli (Le)",
+    "facility_name": "Garderie le Petit Voilier de Bois-Joli",
     "facility_type": "Day Care Facility",
     "county": "Halifax County",
     "phone": "902-435-1332",
@@ -466,7 +466,7 @@
     "index": 16
 }, {
     "facility_identifier": "2900508",
-    "facility_name": "Garderie le Petit Voilier (Le) (Carrefour & Pavillon)",
+    "facility_name": "Garderie le Petit Voilier (Le)",
     "facility_type": "Day Care Facility",
     "county": "Halifax County",
     "phone": "902-435-1332",
@@ -521,7 +521,7 @@
     "index": 18
 }, {
     "facility_identifier": "2901568",
-    "facility_name": "YMCA of Cape Breton Early Learning Centre (After School Program)",
+    "facility_name": "YMCA of Cape Breton Early Learning Centre",
     "facility_type": "Day Care Facility",
     "county": "Cape Breton County",
     "phone": "902-562-9622 ext: 2223",
@@ -577,7 +577,7 @@
     "index": 20
 }, {
     "facility_identifier": "2901634",
-    "facility_name": "Garderie Le Petit Voilier (Centre du Grand-Portage)",
+    "facility_name": "Garderie Le Petit Voilier",
     "facility_type": "Day Care Facility",
     "county": "Halifax County",
     "phone": "902-865-6263",
@@ -1153,7 +1153,7 @@
     "index": 41
 }, {
     "facility_identifier": "2907648",
-    "facility_name": "Love, Laughter and Learning Centre (The)",
+    "facility_name": "Love, Laughter and Learning Centre",
     "facility_type": "Day Care Facility",
     "county": "Colchester County",
     "phone": "902-662-3210",
@@ -1402,7 +1402,7 @@
     "index": 50
 }, {
     "facility_identifier": "2913256",
-    "facility_name": "Creative Kids Education Centre Inc. (Preschool & After-School)",
+    "facility_name": "Creative Kids Education Centre Inc.",
     "facility_type": "Day Care Facility",
     "county": "Halifax County",
     "phone": "902-832-5437",
@@ -1509,7 +1509,7 @@
     "index": 54
 }, {
     "facility_identifier": "2915012",
-    "facility_name": "Children's Corner Day Care Centre (2 Circassion)",
+    "facility_name": "Children's Corner Day Care Centre",
     "facility_type": "Day Care Facility",
     "county": "Halifax County",
     "phone": "902-462-7200, 902-462-1185 - Circassion",
@@ -1592,7 +1592,7 @@
     "index": 57
 }, {
     "facility_identifier": "2915044",
-    "facility_name": "Small World Learning Centre (York St.)",
+    "facility_name": "Small World Learning Centre",
     "facility_type": "Day Care Facility",
     "county": "Lunenburg County",
     "phone": "902-543-7343",
@@ -1760,7 +1760,7 @@
     "index": 63
 }, {
     "facility_identifier": "2965905",
-    "facility_name": "St. Joseph's Children's Centre (Monastery)",
+    "facility_name": "St. Joseph's Children's Centre",
     "facility_type": "Day Care Facility",
     "county": "Halifax County",
     "phone": "902-422-8441 ext: 155",
@@ -1867,7 +1867,7 @@
     "index": 67
 }, {
     "facility_identifier": "2965939",
-    "facility_name": "Project ELM Pre-school (Middle Musquodoboit)",
+    "facility_name": "Project ELM Pre-school",
     "facility_type": "Day Care Facility",
     "county": "Halifax County",
     "email": "mvfrc1@gmail.com",
@@ -2237,7 +2237,7 @@
     "index": 81
 }, {
     "facility_identifier": "2972166",
-    "facility_name": "YMCA of Southwest Nova Scotia Association (Hebbville)",
+    "facility_name": "YMCA of Southwest Nova Scotia Association",
     "facility_type": "Day Care Facility",
     "county": "Lunenburg County",
     "phone": "902-543-6399",
@@ -2646,7 +2646,7 @@
     "index": 96
 }, {
     "facility_identifier": "2975792",
-    "facility_name": "Duck Duck Goose Children's Centre Limited (Lantana)",
+    "facility_name": "Duck Duck Goose Children's Centre Limited",
     "facility_type": "Day Care Facility",
     "county": "Halifax County",
     "phone": "902-433-0320",
@@ -2921,7 +2921,7 @@
     "index": 106
 }, {
     "facility_identifier": "2980100",
-    "facility_name": "Duck Duck Goose Children's Centre Limited (Portland Estates)",
+    "facility_name": "Duck Duck Goose Children's Centre Limited",
     "facility_type": "Day Care Facility",
     "county": "Halifax County",
     "phone": "902-435-5370",
@@ -2949,7 +2949,7 @@
     "index": 107
 }, {
     "facility_identifier": "2982317",
-    "facility_name": "Point Pleasant Child Care Centre (St. Mary's)",
+    "facility_name": "Point Pleasant Child Care Centre",
     "facility_type": "Day Care Facility",
     "county": "Halifax County",
     "phone": "902-422-2293",
@@ -2977,7 +2977,7 @@
     "index": 108
 }, {
     "facility_identifier": "2982526",
-    "facility_name": "Point Pleasant Child Care Centre (Infant)",
+    "facility_name": "Point Pleasant Child Care Centre",
     "facility_type": "Day Care Facility",
     "county": "Halifax County",
     "phone": "902-422-2293",
@@ -3005,7 +3005,7 @@
     "index": 109
 }, {
     "facility_identifier": "2982542",
-    "facility_name": "Point Pleasant Child Care Centre (Ogilvie)",
+    "facility_name": "Point Pleasant Child Care Centre",
     "facility_type": "Day Care Facility",
     "county": "Halifax County",
     "phone": "902-422-2293",
@@ -3089,7 +3089,7 @@
     "index": 112
 }, {
     "facility_identifier": "2983227",
-    "facility_name": "Project ELM Pre-school (Dutch Settlement)",
+    "facility_name": "Project ELM Pre-school",
     "facility_type": "Day Care Facility",
     "county": "Halifax County",
     "total_licance_capacity": "15",
@@ -3224,7 +3224,7 @@
     "index": 117
 }, {
     "facility_identifier": "2987731",
-    "facility_name": "Care & Fun Childcare Limited (Bedford Highway)",
+    "facility_name": "Care & Fun Childcare Limited",
     "facility_type": "Day Care Facility",
     "county": "Halifax County",
     "phone": "902-445-0881",
@@ -3352,7 +3352,7 @@
     "index": 122
 }, {
     "facility_identifier": "2992120",
-    "facility_name": "Red Apple Children's Centre Ltd (The)",
+    "facility_name": "Red Apple Children's Centre Ltd",
     "facility_type": "Day Care Facility",
     "county": "Antigonish County",
     "phone": "902-863-4357, 902-863-0430",
@@ -3407,7 +3407,7 @@
     "index": 124
 }, {
     "facility_identifier": "2993714",
-    "facility_name": "Garderie Familiale de Clare (La)",
+    "facility_name": "Garderie Familiale de Clare",
     "facility_type": "Family Home Day Care Agency",
     "county": "Digby County",
     "phone": "902-645-2673",
@@ -3560,7 +3560,7 @@
     "index": 130
 }, {
     "facility_identifier": "2997289",
-    "facility_name": "Citizen Service League Nursery School (Town House)",
+    "facility_name": "Citizen Service League Nursery School",
     "facility_type": "Day Care Facility",
     "county": "Cape Breton County",
     "phone": "902-849-2449",
@@ -3643,7 +3643,7 @@
     "index": 133
 }, {
     "facility_identifier": "3000261",
-    "facility_name": "Giant Steps Children's Centre Inc. (Wyndham Drive)",
+    "facility_name": "Giant Steps Children's Centre Inc.",
     "facility_type": "Day Care Facility",
     "county": "Halifax County",
     "phone": "902-826-3040",
@@ -3949,7 +3949,7 @@
     "index": 144
 }, {
     "facility_identifier": "3004140",
-    "facility_name": "Shambhala School Pre-Primary (The)",
+    "facility_name": "Shambhala School Pre-Primary",
     "facility_type": "Day Care Facility",
     "county": "Halifax County",
     "phone": "902-454-6100",
@@ -4005,7 +4005,7 @@
     "index": 146
 }, {
     "facility_identifier": "3004733",
-    "facility_name": "Crestview Children's Centre (Full Day Care)",
+    "facility_name": "Crestview Children's Centre",
     "facility_type": "Day Care Facility",
     "county": "Halifax County",
     "phone": "902-832-0972",
@@ -4033,7 +4033,7 @@
     "index": 147
 }, {
     "facility_identifier": "3004738",
-    "facility_name": "Crestview Children's Centre (43 Oceanview Drive)",
+    "facility_name": "Crestview Children's Centre",
     "facility_type": "Day Care Facility",
     "county": "Halifax County",
     "phone": "902-835-4295",
@@ -4450,7 +4450,7 @@
     "index": 162
 }, {
     "facility_identifier": "3011385",
-    "facility_name": "Busy Bee Day Care Co. Ltd. (Lake Echo)",
+    "facility_name": "Busy Bee Day Care Co. Ltd.",
     "facility_type": "Day Care Facility",
     "county": "Halifax County",
     "phone": "902-829-2333",
@@ -4529,7 +4529,7 @@
     "index": 165
 }, {
     "facility_identifier": "3012460",
-    "facility_name": "Boys & Girls Club of Yarmouth Day Care Centre (Pleasant St)",
+    "facility_name": "Boys & Girls Club of Yarmouth Day Care Centre",
     "facility_type": "Day Care Facility",
     "county": "Yarmouth County",
     "phone": "902-742-0749",
@@ -4613,7 +4613,7 @@
     "index": 168
 }, {
     "facility_identifier": "3012472",
-    "facility_name": "YMCA of Pictou County After School Program (G.R. Saunders)",
+    "facility_name": "YMCA of Pictou County After School Program",
     "facility_type": "Day Care Facility",
     "county": "Pictou County",
     "phone": "902-752-0202 ext: 239",
@@ -4750,7 +4750,7 @@
     "index": 173
 }, {
     "facility_identifier": "3024351",
-    "facility_name": "University Children's Centre (Dalhousie)",
+    "facility_name": "University Children's Centre",
     "facility_type": "Day Care Facility",
     "county": "Halifax County",
     "phone": "902-494-7001",
@@ -4778,7 +4778,7 @@
     "index": 174
 }, {
     "facility_identifier": "3024410",
-    "facility_name": "University Children's Centre (Life Sciences)",
+    "facility_name": "University Children's Centre",
     "facility_type": "Day Care Facility",
     "county": "Halifax County",
     "phone": "902-494-7001",
@@ -4857,7 +4857,7 @@
     "index": 177
 }, {
     "facility_identifier": "3024714",
-    "facility_name": "Children's Corner Day Care Centre (Colby Drive)",
+    "facility_name": "Children's Corner Day Care Centre",
     "facility_type": "Day Care Facility",
     "county": "Halifax County",
     "phone": "902-462-7200",
@@ -4969,7 +4969,7 @@
     "index": 181
 }, {
     "facility_identifier": "3025367",
-    "facility_name": "Victoria Children's Centre (Prince Albert)",
+    "facility_name": "Victoria Children's Centre",
     "facility_type": "Day Care Facility",
     "county": "Halifax County",
     "phone": "902-466-0464",
@@ -5025,7 +5025,7 @@
     "index": 183
 }, {
     "facility_identifier": "3025466",
-    "facility_name": "Garderie le Petit Voilier de Beaubassin (Le)",
+    "facility_name": "Garderie le Petit Voilier de Beaubassin",
     "facility_type": "Day Care Facility",
     "county": "Halifax County",
     "phone": "902-445-6480",
@@ -5263,7 +5263,7 @@
     "index": 192
 }, {
     "facility_identifier": "3028061",
-    "facility_name": "Garderie Les Petits Poussins Daycare (Le)",
+    "facility_name": "Garderie Les Petits Poussins Daycare",
     "facility_type": "Day Care Facility",
     "county": "Inverness County",
     "phone": "902-224-1998",
@@ -5424,7 +5424,7 @@
     "index": 198
 }, {
     "facility_identifier": "3039377",
-    "facility_name": "Children's Garden (The)",
+    "facility_name": "Children's Garden",
     "facility_type": "Day Care Facility",
     "county": "Halifax County",
     "phone": "902-457-3313 ext: 5",
@@ -5452,7 +5452,7 @@
     "index": 199
 }, {
     "facility_identifier": "3042282",
-    "facility_name": "Jardin d'Enfants (Le)",
+    "facility_name": "Jardin d'Enfants",
     "facility_type": "Day Care Facility",
     "county": "Colchester County",
     "phone": "902-896-4520",
@@ -5508,7 +5508,7 @@
     "index": 201
 }, {
     "facility_identifier": "3042520",
-    "facility_name": "Little People's Place of Shelburne Association (St. Andrew's Lane)",
+    "facility_name": "Little People's Place of Shelburne Association",
     "facility_type": "Day Care Facility",
     "county": "Shelburne County",
     "phone": "902-875-3774",
@@ -5536,7 +5536,7 @@
     "index": 202
 }, {
     "facility_identifier": "3042572",
-    "facility_name": "Little People's Place of Shelburne Association (King Street)",
+    "facility_name": "Little People's Place of Shelburne Association",
     "facility_type": "Day Care Facility",
     "county": "Shelburne County",
     "phone": "902-875-3774",
@@ -5592,7 +5592,7 @@
     "index": 204
 }, {
     "facility_identifier": "3042900",
-    "facility_name": "St. Joseph's Children's Centre (Duke Tower)",
+    "facility_name": "St. Joseph's Children's Centre",
     "facility_type": "Day Care Facility",
     "county": "Halifax County",
     "phone": "902-422-8441 ext:160",
@@ -5648,7 +5648,7 @@
     "index": 206
 }, {
     "facility_identifier": "3047157",
-    "facility_name": "Dartmouth Day Care Centre (Caledonia)",
+    "facility_name": "Dartmouth Day Care Centre",
     "facility_type": "Day Care Facility",
     "county": "Halifax County",
     "phone": "902-434-2865",
@@ -5676,7 +5676,7 @@
     "index": 207
 }, {
     "facility_identifier": "3047174",
-    "facility_name": "Dartmouth Day Care Centre (Crichton)",
+    "facility_name": "Dartmouth Day Care Centre",
     "facility_type": "Day Care Facility",
     "county": "Halifax County",
     "phone": "902-469-3739",
@@ -5866,7 +5866,7 @@
     "index": 214
 }, {
     "facility_identifier": "3053439",
-    "facility_name": "St. Joseph's Children's Centre (Lacewood)",
+    "facility_name": "St. Joseph's Children's Centre",
     "facility_type": "Day Care Facility",
     "county": "Halifax County",
     "phone": "902-422-8441 ext: 140",
@@ -5973,7 +5973,7 @@
     "index": 218
 }, {
     "facility_identifier": "3058134",
-    "facility_name": "Fox and the Hare Daycare (The)",
+    "facility_name": "Fox and the Hare Daycare",
     "facility_type": "Day Care Facility",
     "county": "Shelburne County",
     "phone": "902-656-2847",
@@ -6057,7 +6057,7 @@
     "index": 221
 }, {
     "facility_identifier": "3090805",
-    "facility_name": "YMCA of Southwest Nova Scotia Association (High St)",
+    "facility_name": "YMCA of Southwest Nova Scotia Association",
     "facility_type": "Day Care Facility",
     "county": "Lunenburg County",
     "phone": "902-543-6399",
@@ -6085,7 +6085,7 @@
     "index": 222
 }, {
     "facility_identifier": "3092629",
-    "facility_name": "Kinder Garden Preschool (The)(Brooklyn)",
+    "facility_name": "Kinder Garden Preschool (The",
     "facility_type": "Day Care Facility",
     "county": "Hants County",
     "phone": "902-757-2234",
@@ -6113,7 +6113,7 @@
     "index": 223
 }, {
     "facility_identifier": "3098457",
-    "facility_name": "Beaver Bank Children's Learning Centre (Kinsac Location)",
+    "facility_name": "Beaver Bank Children's Learning Centre",
     "facility_type": "Day Care Facility",
     "county": "Halifax County",
     "phone": "902-864-5118",
@@ -6307,7 +6307,7 @@
     "index": 230
 }, {
     "facility_identifier": "3115074",
-    "facility_name": "Sherwood Park Preschool (2015) Limited",
+    "facility_name": "Sherwood Park Preschool",
     "facility_type": "Day Care Facility",
     "county": "Halifax County",
     "phone": "902-445-3983",
@@ -6612,7 +6612,7 @@
     "index": 241
 }, {
     "facility_identifier": "3205100",
-    "facility_name": "YMCA of Pictou County After School Program (Trenton)",
+    "facility_name": "YMCA of Pictou County After School Program",
     "facility_type": "Day Care Facility",
     "county": "Pictou County",
     "phone": "902-752-0202 ext: 227",
@@ -6638,7 +6638,7 @@
     "index": 242
 }, {
     "facility_identifier": "3205121",
-    "facility_name": "YMCA of Pictou County After School Program (Walter Duggan)",
+    "facility_name": "YMCA of Pictou County After School Program",
     "facility_type": "Day Care Facility",
     "county": "Pictou County",
     "phone": "902-752-0202 ext: 227",
@@ -6692,7 +6692,7 @@
     "index": 244
 }, {
     "facility_identifier": "3211409",
-    "facility_name": "Garderie le Petit Voilier (Sommet) (La)",
+    "facility_name": "Garderie le Petit Voilier (Sommet)",
     "facility_type": "Day Care Facility",
     "county": "Halifax County",
     "phone": "902-832-9674",
@@ -6883,7 +6883,7 @@
     "index": 251
 }, {
     "facility_identifier": "3238288",
-    "facility_name": "Grace Note Child Care Centre (2010) Limited",
+    "facility_name": "Grace Note Child Care Centre",
     "facility_type": "Day Care Facility",
     "county": "Halifax County",
     "phone": "902-444-3480",
@@ -7294,7 +7294,7 @@
     "index": 266
 }, {
     "facility_identifier": "3326317",
-    "facility_name": "Project Elm (Upper Musquodoboit)",
+    "facility_name": "Project Elm",
     "facility_type": "Day Care Facility",
     "county": "Halifax County",
     "phone": "902-384-2794",
@@ -7566,7 +7566,7 @@
     "index": 276
 }, {
     "facility_identifier": "3536217",
-    "facility_name": "YMCA of Pictou County After School Program (A.G. Baillie)",
+    "facility_name": "YMCA of Pictou County After School Program",
     "facility_type": "Day Care Facility",
     "county": "Pictou County",
     "phone": "902-752-0202",
@@ -7622,7 +7622,7 @@
     "index": 278
 }, {
     "facility_identifier": "3543713",
-    "facility_name": "Next Step K.C.A. Afterschool Program (The)",
+    "facility_name": "Next Step K.C.A. Afterschool Program",
     "facility_type": "Day Care Facility",
     "county": "Kings County",
     "phone": "902-678-3843",
@@ -7872,7 +7872,7 @@
     "index": 287
 }, {
     "facility_identifier": "3586160",
-    "facility_name": "Cumberland YMCA Early Learning Centre (Church Street)",
+    "facility_name": "Cumberland YMCA Early Learning Centre",
     "facility_type": "Day Care Facility",
     "county": "Cumberland County",
     "phone": "902-667-4724",
@@ -8256,7 +8256,7 @@
     "index": 301
 }, {
     "facility_identifier": "3649244",
-    "facility_name": "JR After School Program (2014) Ltd. - Ferrisview",
+    "facility_name": "JR After School Program",
     "facility_type": "Day Care Facility",
     "county": "Cape Breton County",
     "phone": "902-371-8164",
@@ -8284,7 +8284,7 @@
     "index": 302
 }, {
     "facility_identifier": "3649259",
-    "facility_name": "JR After School Program (2014) Ltd. - Cusack",
+    "facility_name": "JR After School Program",
     "facility_type": "Day Care Facility",
     "county": "Cape Breton County",
     "phone": "902-371-8164",
@@ -8312,7 +8312,7 @@
     "index": 303
 }, {
     "facility_identifier": "3649289",
-    "facility_name": "JR After School Program (2014) Ltd. - Robin Foote Elementary",
+    "facility_name": "JR After School Program",
     "facility_type": "Day Care Facility",
     "county": "Cape Breton County",
     "phone": "902-371-8164",
@@ -8367,7 +8367,7 @@
     "index": 305
 }, {
     "facility_identifier": "3651971",
-    "facility_name": "Growing Place Early Education Centre (The) (Belle Vista)",
+    "facility_name": "Growing Place Early Education Centre (The)",
     "facility_type": "Day Care Facility",
     "county": "Halifax County",
     "phone": "902-434-3886",
@@ -8394,7 +8394,7 @@
     "index": 306
 }, {
     "facility_identifier": "3651983",
-    "facility_name": "Growing Place Early Education Centre (The) (Woodlawn)",
+    "facility_name": "Growing Place Early Education Centre (The)",
     "facility_type": "Day Care Facility",
     "county": "Halifax County",
     "phone": "902-433-0727",
@@ -8645,7 +8645,7 @@
     "index": 315
 }, {
     "facility_identifier": "3720704",
-    "facility_name": "Boys & Girls Club of Yarmouth Day Care Centre (Bond St)",
+    "facility_name": "Boys & Girls Club of Yarmouth Day Care Centre",
     "facility_type": "Day Care Facility",
     "county": "Yarmouth County",
     "phone": "902-742 9103",
@@ -8812,7 +8812,7 @@
     "index": 321
 }, {
     "facility_identifier": "3818582",
-    "facility_name": "Willowbrae Childcare Academy (Site 2)",
+    "facility_name": "Willowbrae Childcare Academy",
     "facility_type": "Day Care Facility",
     "county": "Halifax County",
     "phone": "902-442-9244",
@@ -8973,7 +8973,7 @@
     "index": 327
 }, {
     "facility_identifier": "3883131",
-    "facility_name": "Busy Bee Day Care (Porters Lake)",
+    "facility_name": "Busy Bee Day Care",
     "facility_type": "Day Care Facility",
     "county": "Halifax County",
     "phone": "902-827-3456",
@@ -9315,7 +9315,7 @@
     "index": 340
 }, {
     "facility_identifier": "3986849",
-    "facility_name": "Elmwood Child Care Centre (Infants) Ltd",
+    "facility_name": "Elmwood Child Care Centre",
     "facility_type": "Day Care Facility",
     "county": "Hants County",
     "phone": "902-883-1214",
@@ -9336,7 +9336,7 @@
     "index": 341
 }, {
     "facility_identifier": "3986898",
-    "facility_name": "Elmwood Child Care Centre (Elmsdale Location)",
+    "facility_name": "Elmwood Child Care Centre",
     "facility_type": "Day Care Facility",
     "county": "Hants County",
     "phone": "902-883-1066",
@@ -9357,7 +9357,7 @@
     "index": 342
 }, {
     "facility_identifier": "3986916",
-    "facility_name": "Elmwood Child Care Centre (Lantz) Ltd",
+    "facility_name": "Elmwood Child Care Centre",
     "facility_type": "Day Care Facility",
     "county": "Hants County",
     "phone": "902-883-1066",
@@ -9435,7 +9435,7 @@
     "index": 345
 }, {
     "facility_identifier": "3994480",
-    "facility_name": "Boys and Girls Club of Yarmouth (Meadowfields)",
+    "facility_name": "Boys and Girls Club of Yarmouth",
     "facility_type": "Day Care Facility",
     "county": "Yarmouth County",
     "phone": "902-742-9103",
@@ -9942,7 +9942,7 @@
     "index": 364
 }, {
     "facility_identifier": "4089503",
-    "facility_name": "St. Joseph's Children's Centre (Damascus Road)",
+    "facility_name": "St. Joseph's Children's Centre",
     "facility_type": "Day Care Facility",
     "county": "Halifax County",
     "phone": "902-422-8441 ext: 196, ext: 194",
@@ -9969,7 +9969,7 @@
     "index": 365
 }, {
     "facility_identifier": "4090657",
-    "facility_name": "Kids and Company (Eastern Passage)",
+    "facility_name": "Kids and Company",
     "facility_type": "Day Care Facility",
     "county": "Halifax County",
     "phone": "902-431-6845",
