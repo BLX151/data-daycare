@@ -2,7 +2,7 @@
 
 .main {flex-grow:1; display:flex; align-items:center; justify-content:center;}
 
-.title {}
+/*.title {}*/
 .title-text {margin-top: 15px;}
 
 .search {flex-grow:1;}
