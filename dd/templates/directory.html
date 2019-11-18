@@ -11,9 +11,6 @@
 
     <div class = "flexh">
         <div class = "directory flexv">
-            <script>
-            document.onload(showAllDaycares());
-            </script>
             <!--This is where the daycares are displayed-->
             <div id="daycareSpot"></div>
 
@@ -233,6 +230,7 @@
         var daycaresToDelete = [];
         var uncommonValues = [];
         var database;
+        database = {{ database | tojson }};
 
 
         // This function is finding the difference between the current databases
@@ -268,7 +266,6 @@
 
         function showAllDaycares()
         {
-            database = {{ database | tojson }};
 
             for (i = 0; i<database.length;i++)
             {
@@ -286,6 +283,7 @@
                 display = "<div><h4> There are no Daycares that match your selection <div><h4>";
             }
             document.getElementById("daycareSpot").innerHTML = display;
+            
         }
 
         // This function is where the filtering happens. It will also call
@@ -298,12 +296,11 @@
             // reset the variables for each filtering
             filteredDaycareArray = [];
             daycaresToDelete = [];
-            //database = {{ database | tojson }};
 
-            /*for (i = 0; i<database.length;i++)
+            for (i = 0; i<database.length;i++)
             {
                 filteredDaycareArray.push(i);
-            }*/
+            }
 
             var elementCounty = document.getElementById("county");
             var selectedCounty = elementCounty.options[elementCounty.selectedIndex].value;
@@ -606,7 +603,7 @@
             
             
         }
-        document.onload(showAllDaycares());
+        showAllDaycares();
         </script>
     </div>
 
