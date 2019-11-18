@@ -7,28 +7,33 @@
 {% endblock head %}
 
 {% block content %}
-        <div class = "top flexh orange">
+        <div class = "home flexh">
 
-            <div class = "search flexv yellow">
-                <div class = "wrapper">
-                    <h1 class = "raw search-text">Search</h1>
-                    <form class = " search-input flexv raw">
-                        <input class = "search-bar" type = "text">
-                        <input class = "search-button" type = "submit" value = "Submit">
-                    </form>
+            <div class = "main flexv c1">
+                <div class = "title">
+                    <h1 class = "title-text">Data Daycare</h1>
+                </div>
+                <div class = "search flexv">
+                    <div class = "search-wrapper">
+                        <h3 class = "search-text">FIND THE PERFECT DAYCARE TO SUIT YOU</h3>
+                        <form class = " search-input flexv">
+                            <input class = "search-bar" type = "text">
+                            <input class = "search-button" type = "submit" value = "Search">
+                        </form>
+                    </div>
                 </div>
             </div>
 
-            <div class = "nearby flexv">
-                <h2 class = "raw n_text">Nearby</h2>
-                <div class = " n_items flexv">
+            <div class = "nearby flexv c1">
+                <h2 class = "nearby-text">Nearby Daycares</h2>
+                <div class = " nearby-items flexv">
                     {% for daycare in nearby %}
-                    <div class = "n_wrap">
-                        <h4 class = "raw n_name">{{ daycare["facility_name"] }}</h4>
-                        <h5 class = "raw n_address">{{ daycare["address"] }}, {{ daycare["city"] }}</h5>
-                        <h6 class = "raw n_sub-item1">Ages: {{ daycare["age_range"] }}</h6>
-                        <div class = "n_sub flexh">
-                            <h6 class = "raw n_sub-item2">Phone: {{ daycare["phone"] }}</h6>
+                    <div class = "nearby-wrap c1d">
+                        <h4 class = "raw nearby-name">{{ daycare["facility_name"] }}</h4>
+                        <h5 class = "raw nearby-address">{{ daycare["address"] }}, {{ daycare["city"] }}</h5>
+                        <h6 class = "raw nearby-sub-item1">Ages: {{ daycare["age_range"] }}</h6>
+                        <div class = "nearby-sub flexh">
+                            <h6 class = "raw nearby-sub-item2">Phone: {{ daycare["phone"] }}</h6>
                             <h6 class = "raw">Email: <a href="">{{ daycare["email"] }}</a></h6>
                         </div>
                     </div>
@@ -37,36 +42,4 @@
             </div>
 
         </div>
-
-        <!-- Irrelevant code, but do not delete just incase -->
-        <!-- <div class = "recent orange">
-            <h2 class = "recent-title raw">Recently Viewed</h2>
-            
-            {% for daycare in recent %}
-            <div class = "recent-daycare">
-                <h4 class = "raw">{{ daycare["facility_name"] }}</h4>
-            </div>
-            {% endfor %}
-            
-            <table>
-                <tr>
-                    <th>Name</th>
-                    <th>City</th>
-                    <th>Age Range</th>
-                    <th>Phone</th>
-                    <th>Email</th>
-                    <th>Address</th>
-                </tr>
-                {% for daycare in recent %}
-                <tr>
-                    <td>{{ daycare["facility_name"] }}</td>
-                    <td>{{ daycare["city"] }}</td>
-                    <td>{{ daycare["age_range"] }}</td>
-                    <td>{{ daycare["phone"] }}</td>
-                    <td>{{ daycare["email"] }}</td>
-                    <td>{{ daycare["address"] }}</td>
-                </tr>
-                {% endfor %}
-            </table>
-        </div> -->
 {% endblock content %}

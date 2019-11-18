@@ -11,10 +11,8 @@
 
     <div class = "flexh">
         <div class = "directory flexv">
-            <div class = "daycare-box red">
             <!--This is where the daycares are displayed-->
             <div id="daycareSpot"></div>
-            </div>
 
             <!-- might need this code for later-->
             <!--{% for daycare in database %}
@@ -257,8 +255,8 @@
         var display;
         for (i=0 ; i<filteredDaycareArray.length ; i++)
         {
-            display = display + "<h4>"+ database[filteredDaycareArray[i]].facility_name+"</h4><br>";
-            display = display + "<h6>Index:"+ database[filteredDaycareArray[i]].index+"</h6><br>"
+            display = display + "<div class = 'daycare-box c1 raw'><h4 class = 'raw'>"+ database[filteredDaycareArray[i]].facility_name+"</h4>";
+            display = display + "<h6 class = 'raw'>Index:"+ database[filteredDaycareArray[i]].index+"</h6></div>"
         }
         if (filteredDaycareArray.length==0)
         {
