@@ -1,50 +1,62 @@
 import requests, json, sys # Allows the fetching and storing of the API calls
 from math import radians, cos, sin, sqrt, atan2
 
-# === Update the database from the Nova Scotia open data API ===
+# UPDATE DATABASE FILE
+# ============================================================================================================
 def updateDatabase(daycares):
     with open("dd/db/db.json", "w") as databaseFile:  # Opening database.json as truncate 
         json.dump(daycares, databaseFile) # Dump the data into the file using the json class
+# ============================================================================================================
 
-# === Get an updated version of the data from the API ===
+# FETCH UPDATED DATABASE FROM API
+# ============================================================================================================
 def fetchDatabase():
     url = "https://data.novascotia.ca/resource/3j9v-yimg.json" # URL for API fetching
     daycares = requests.get(url).json() # Request is the raw request information
     updateDatabase(daycares) # Update the .json file 
-    updateDatabase(fixHorribleFormatting()) # Update the database again with the fixed data
-    updateDatabase(indexify())
-    
+    updateDatabase(fixFormatting()) # Update the database again with the fixed data
+    updateDatabase(indexDaycares())
+# ============================================================================================================
 
-# === Return a dictionary containing the database ===
+# RETURN DATABASE AS DICT
+# ============================================================================================================
 def getDatabase():
     with open("dd/db/db.json") as databaseFile: # Open the file as read only
         return json.load(databaseFile) # Return the database file as a dictionary using the json class
+# ============================================================================================================
 
-# === Return x elements from beginning of the list ====
-# TODO: Update it so it will fetch x elements based on a search query
-def getXElements(x):
+# RETURN 'AMOUNT' DAYCARES FROM START
+# ============================================================================================================
+# TODO: Update so it returns daycares with matching indexes
+def getDaycares(indexList):
     database = getDatabase() # Get the database
-    return database[:x]
+    return database[:amount]
     # The .json file is just a list of dictionaries.
     # This is split the list from the beginning to the x-th item in the list
+# ============================================================================================================
 
-# === Get the daycare with the specific index
+# GET SPECIFIC DAYCARE WITH INDEX
+# ============================================================================================================
 def getDaycare(index):
     database = getDatabase()
     for daycare in database:
         if daycare["index"] == index:
             return daycare
+# ============================================================================================================
 
-# === Index all of the daycares ===
-def indexify():
+# INDEX DAYCARES
+# ============================================================================================================
+def indexDaycares():
     database = getDatabase() 
     index = 0 # Initialize an index count
     for daycare in database: # Run through every daycare in the database
         daycare["index"] = index # Add a new key 'index' which has a unique value for each daycare
         index += 1 # Increment the index for the next daycare
     return database # Return the indexed database
+# ============================================================================================================
 
-# === Calculates the distance between two coods  ==
+# CALCULATE DISTANCE BETWEEN TWO COORDINATES
+# ============================================================================================================
 def getDistance(lat1, lon1, lat2, lon2):
     R = 6373.0  # approximate radius of earth in km
     lat1 = radians(float(lat1)) # Must convert
@@ -57,8 +69,12 @@ def getDistance(lat1, lon1, lat2, lon2):
     c = 2 * atan2(sqrt(a), sqrt(1 - a))
     # ^^^^^^^^^^^^^^ DO FANCY MATHS IDC ABOUT ^^^^^^^^^^^^^^^^^^^^^^
     return R * c # Return the distance between the two coords
+# ============================================================================================================
 
-# === Sort inputed array by nearest distance ===
+
+# SORT DAYCARES BY DISTANCE
+# ============================================================================================================
+# TODO - update so it can sort by any criteria
 # THIS IS A PEICE OF SHIT, don't touch, it works somehow
 # could be refactored so it will sort by any term
 def sortByDistance(nearby):
@@ -86,8 +102,10 @@ def sortByDistance(nearby):
             noChange = False # Indicate a change was made
             continue
     return nearby # Return the sorted array
+# ============================================================================================================
 
-# === Get an array with the closest daycares ===
+# GET DAYCARES WITH CLOSEST DISTANCE
+# ============================================================================================================
 def getByDistance(maxDistance, amount, user_geoData):
     database = getDatabase()
     nearby = [] # Empty list
@@ -102,9 +120,10 @@ def getByDistance(maxDistance, amount, user_geoData):
     nearby = sortByDistance(nearby) # Sort this list by distance
     return nearby[:amount] # Return on the first 'amount' of entires (i.e. 5)
 
-# === Fixes the casing from the original dataset. It doesn't display how we want it to. ===
+# FIX FORMATTING ISSUES
+# ============================================================================================================
 # DO NOT TOUCH, THIS WORKS AS EXPECTED AND I DON'T REMEMBER HOW I DID IT
-def fixHorribleFormatting():
+def fixFormatting():
     database = getDatabase()
     for daycare in database:
         if ('(' in daycare['facility_name'] ):
@@ -132,10 +151,14 @@ def fixHorribleFormatting():
         daycare['address'] = address
     return database
 # This is a spaghetti mess...
+# ============================================================================================================
 
-# === DEBUG STATEMENTS ===
+
+# DEBUG
+# ============================================================================================================
 # fetchDatabase()
 # daycares = getDatabase()
-# daycares = getXElements(6)
+# daycares = getDaycares(6)
 # print(daycares)
 # print(getDaycare(1))
+# ============================================================================================================
