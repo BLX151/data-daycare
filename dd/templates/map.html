@@ -32,8 +32,9 @@
             {
                 if ('location' in database[i])
                 {
+                    var link = '<a href="/daycare/'+i+'">Click here for more info.</a>'
                     L.marker([database[i].location.latitude, database[i].location.longitude]).addTo(map)
-                    .bindPopup(database[i].facility_name)
+                    .bindPopup("<b>"+database[i].facility_name+"</b><br>"+link);
                 }
             }
         }
