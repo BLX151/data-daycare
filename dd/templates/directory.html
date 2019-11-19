@@ -12,12 +12,11 @@
     <div class = "flexh">
         <div class = "directory flexv">
             <!--This is where the daycares are displayed-->
-            <div id="daycareSpot"></div>
 
-            <!-- might need this code for later-->
-            <!--{% for daycare in database %}
+
+            {% for daycare in database %}
                 <div class = "daycare-box red">
-                    <h4>{{ daycare["facility_name"] }}</h4>
+                    <h4>{{ daycare["facility_name"] }} : INDEX = {{ daycare["index"] }}</h4>
                     
                     
 
@@ -61,13 +60,13 @@
                     </select>
                 </div>
     
-                <div>
+                <!--<div>
                     <select id="daycare_type" name='daycare_type'>
                         <option value="noSelection"> Any Type </option>
                         <option value="FamilyHome"> Family Home </option>
                         <option value="DayCare"> Day Care </option>
                     </select>
-                </div>
+                </div>-->
     
                 <div>
                     <select id="city" name='city'>
@@ -176,38 +175,39 @@
                 </div>
     
                 <div>
-                    <select id="age1" name='age1'>
-                        <option value="noSelection"> Any Age Group </option>
-                        <option value="age_infant"> Infant </option>
-                        <option value="age_toddler"> Toddler </option>
-                        <option value="age_preschool"> Preschool </option>
-                        <option value="age_school_age"> School </option>
-                    </select>
+                    <p>Enter minimum capacity:</p>
+                    <input type="text" id="min_capacity" name='min_capacity'> 
                 </div>
-    
+
                 <div>
-                    <select id="age2" name='age2'>
-                        <option value="noSelection"> Any Age Group </option>
-                        <option value="age_infant"> Infant </option>
-                        <option value="age_toddler"> Toddler </option>
-                        <option value="age_preschool"> Preschool </option>
-                        <option value="age_school_age"> School </option>
-                    </select>
+                    <p>Enter maximum capacity:</p>
+                    <input type="text" id="max_capacity" name='max_capacity'> 
                 </div>
-    
+
                 <div>
-                    <select id="capacity" name='capacity'>
-                        <option value="noSelection"> Any Size Capacity </option>
-                        <option value="20"> 20 and Under </option>
-                        <option value="40"> 21 to 40 </option>
-                        <option value="60"> 41 to 60 </option>
-                        <option value="80"> 61 to 80 </option>
-                        <option value="100"> 81 to 100 </option>
-                        <option value="101"> 101 and Above </option>
-                    </select>
+                    <input type="checkbox" id= "age_infant" name='age_infant'> Infant Age </input>
                 </div>
-    
-    
+
+                <div>
+                    <input type="checkbox" id= "age_toddler" name='age_toddler'> Toddler Age </input>
+                </div>
+
+                <div>
+                    <input type="checkbox" id= "age_preschool" name='age_preschool'> Preschool Age </input>
+                </div>
+
+                <div>
+                    <input type="checkbox" id= "age_school_age" name='age_school_age'> School Age </input>
+                </div>
+                
+                <div>
+                    <input type="checkbox" id= "prog-full_day" name='prog_full_day'> Full Day Program </input>
+                </div>
+
+                <div>
+                    <input type="checkbox" id= "prog_part_day" name='prog_part_day'> Part Day Program </input>
+                </div>
+                
                 <div>
                 <input type="checkbox" id="annualInspection" checked> Annual Inspection Recorded </input>
                 </div>
@@ -219,425 +219,9 @@
     
                 <button type = "submit">Submit</button>
 
-                <!-- <div>
-                    <button onclick="databaseFilter()"> Submit </button>
-                </div> -->
             </form>
         </div>
         </div>
-        <!-- This is where most of the functionality of filtering
-        resides. It looks kind of confusing at times but it's just a whole
-        lot of comparing between arrays and the database. -->
-        <script type="text/javascript">
-        // Set up the variables that all functions need to use
-        var filteredDaycareArray = [];
-        var daycaresToDelete = [];
-        var uncommonValues = [];
-        var database;
-        database = {{ database | tojson }};
-
-
-        // This function is finding the difference between the current databases
-        // and the databases that need to be deleted. This function is called
-        // at the end of each of the filterings. 
-        // (The difference being all entries that are in filteredDaycareArray and
-        // are not in daycaresToDelete)
-        // This function returns a new array of the correct daycares filtered.
-        function updateDaycares(){
-            uncommonValues = [];
-            uncommonValues = filteredDaycareArray.filter(x => !daycaresToDelete.includes(x))
-            //daycaresToDelete = [];
-            return uncommonValues;
-        }
-
-        // This function is just displaying all filtered daycares with html
-        // This needs to be turned into clickable links that bring you to the specific
-        // daycares webpage.
-        function showDaycares()
-        {
-            var display;
-            for (i=0 ; i<filteredDaycareArray.length ; i++)
-            {
-                display = display + "<div class = 'daycare-box c1 raw'><h4 class = 'raw'>"+ database[filteredDaycareArray[i]].facility_name+"</h4>";
-                display = display + "<h6 class = 'raw'>Index:"+ database[filteredDaycareArray[i]].index+"</h6></div>"
-            }
-            if (filteredDaycareArray.length==0)
-            {
-                display = "<div><h4> There are no Daycares that match your selection <div><h4>";
-            }
-            document.getElementById("daycareSpot").innerHTML = display;
-        }
-
-        function showAllDaycares()
-        {
-
-            for (i = 0; i<database.length;i++)
-            {
-                filteredDaycareArray.push(i);
-            }
-
-            var display;
-            for (i=0 ; i<filteredDaycareArray.length ; i++)
-            {
-                display = display + "<div class = 'daycare-box c1 raw'><h4 class = 'raw'>"+ database[filteredDaycareArray[i]].facility_name+"</h4>";
-                display = display + "<h6 class = 'raw'>Index:"+ database[filteredDaycareArray[i]].index+"</h6></div>"
-            }
-            if (filteredDaycareArray.length==0)
-            {
-                display = "<div><h4> There are no Daycares that match your selection <div><h4>";
-            }
-            document.getElementById("daycareSpot").innerHTML = display;
-            
-        }
-
-        // This function is where the filtering happens. It will also call
-        // the above functions. This function is triggered when the submit
-        // button is pressed and will reset each time it is pressed. 
-        // This function has a lot of the same thing going on, so I'll just
-        // explain the first couple and hopefully the rest make sense.
-        function databaseFilter()
-        {
-            // reset the variables for each filtering
-            filteredDaycareArray = [];
-            daycaresToDelete = [];
-
-            // What does this loop do? -Tyler
-            for (i = 0; i<database.length;i++)
-            {
-                filteredDaycareArray.push(i);
-            }
-
-            var elementCounty = document.getElementById("county");
-            var selectedCounty = elementCounty.options[elementCounty.selectedIndex].value;
-
-            var elementType = document.getElementById("daycare_type");
-            var selectedType = elementType.options[elementType.selectedIndex].value;
-
-            var elementCity = document.getElementById("city");
-            var selectedCity = elementCity.options[elementCity.selectedIndex].value;
-
-            var elementAnalInspection = document.getElementById("annualInspection");
-
-            var elementUnaInspection = document.getElementById("unannouncedInspection");
-
-            var elementAge = document.getElementById("age1");
-            var selectedAge = elementAge.options[elementAge.selectedIndex].value;
-            var no = "No";
-
-            var elementAge2 = document.getElementById("age2");
-            var selectedAge2 = elementAge2.options[elementAge2.selectedIndex].value;
-            var no = "No";
-
-            var elementCapacity = document.getElementById("capacity");
-            var selectedCapacity = elementCapacity.options[elementCapacity.selectedIndex].value;
-            var currentDaycareCapacity;
-
-            // if a county has not been selected and is still on
-            // the "Choose a county" selection
-            if ((selectedCounty.localeCompare("noSelection")!=0)) 
-            {
-                // for each daycare in the database
-                for (i = 0; i < filteredDaycareArray.length; i++)
-                {
-                    //check to see if the daycare even has a county
-                    if ('county' in database[filteredDaycareArray[i]])
-                    {
-                        //compare each daycare in the databases county to
-                        // the selected county
-                        if ((selectedCounty.localeCompare(database[i].county)!=0))
-                        {
-                            // if they have the same county, add the .index
-                            // of that daycare to the filtered daycare array
-                            daycaresToDelete.push(filteredDaycareArray[i]);
-                        }
-                    }
-                        
-                }
-                filteredDaycareArray = updateDaycares();
-            }
-            
-
-            
-
-            // check to see that the type of facility has been selected
-            if ((selectedType.localeCompare("noSelection")!=0))
-            {   // go through all of the FILTERED daycares indexs
-                for (i = 0; i < filteredDaycareArray.length ; i++)
-                {
-                    // make sure family_home is even in that daycare
-                    if ('family_home' in database[filteredDaycareArray[i]])
-                    {
-                        // this is confusing, but it's just comparing like before
-                        if (selectedType.localeCompare("DayCare")==0)
-                        {
-                            var yes = "Yes";
-                            if(yes.localeCompare(database[filteredDaycareArray[i]].family_home)==0)
-                            {
-                                // this selected daycare does not line up with the filtering,
-                                // so add it to the list of daycares to be deleted
-                                daycaresToDelete.push(filteredDaycareArray[i]);
-                            }
-                        } else
-                        {
-                            var no = "No";
-                            if(no.localeCompare(database[filteredDaycareArray[i]].family_home)==0)
-                            {
-                                // same here as above
-                                daycaresToDelete.push(filteredDaycareArray[i]);
-                            }
-                        }
-                    }
-                }
-                // now, update the filteredArray so that it deletes all
-                // entrys that are in the daycaresToDelete array
-                filteredDaycareArray = updateDaycares();
-            }
-
-            
-
-            window.alert(filteredDaycareArray);
-
-            if (selectedCity.localeCompare("noSelection")!=0)
-            {
-                for (i = 0; i < filteredDaycareArray.length ; i++)
-                {
-                    if ('city' in database[filteredDaycareArray[i]])
-                    {
-                        if((selectedCity.localeCompare(database[filteredDaycareArray[i]].city)!=0))
-                        {
-                            daycaresToDelete.push(filteredDaycareArray[i]);
-                        }
-                    
-                    }
-                }
-                filteredDaycareArray = updateDaycares();
-            }
-
-
-            if (elementAnalInspection.checked)
-            {
-                for (i = 0; i < filteredDaycareArray.length ; i++)
-                {
-                    if('annual_inspection' in database[filteredDaycareArray[i]])
-                    {
-                        // do nothing
-                    }
-                    else
-                    {
-                        daycaresToDelete.push(filteredDaycareArray[i]);
-                    }
-                }
-                filteredDaycareArray = updateDaycares();
-            }
-            else
-            {
-                for (i = 0; i < filteredDaycareArray.length ; i++)
-                {
-                    if('annual_inspection' in database[filteredDaycareArray[i]])
-                    {
-                        daycaresToDelete.push(filteredDaycareArray[i]);
-                    }
-                }
-                filteredDaycareArray = updateDaycares();
-            }
-
-
-           
-            if (elementUnaInspection.checked)
-            {
-                for (i = 0; i < filteredDaycareArray.length ; i++)
-                {
-                    if('annual_unannounced_inspection' in database[filteredDaycareArray[i]])
-                    {
-                        // do nothing
-                    }
-                    else
-                    {
-                        daycaresToDelete.push(filteredDaycareArray[i]);
-                    }
-                }
-                filteredDaycareArray = updateDaycares();
-            }
-            else
-            {
-                for (i = 0; i < filteredDaycareArray.length ; i++)
-                {
-                    if('annual_unannounced_inspection' in database[filteredDaycareArray[i]])
-                    {
-                        daycaresToDelete.push(filteredDaycareArray[i]);
-                    }
-                }
-                filteredDaycareArray = updateDaycares();
-            }
-
-
-            if ((selectedAge.localeCompare("noSelection")!=0))
-            {
-                for (i=0 ; i<filteredDaycareArray.length ; i++)
-                {
-                    if (selectedAge.localeCompare("age_infant"))
-                    {
-                        if(no.localeCompare(database[filteredDaycareArray[i]].age_infant)==0)
-                        {
-                            daycaresToDelete.push(filteredDaycareArray[i]);
-                        }
-                    }
-                    if (selectedAge.localeCompare("age_toddler"))
-                    {
-                        if(no.localeCompare(database[filteredDaycareArray[i]].age_toddler)==0)
-                        {
-                            daycaresToDelete.push(filteredDaycareArray[i]);
-                        }
-                    }
-                    if(selectedAge.localeCompare("age_preschool"))
-                    {
-                        if(no.localeCompare(database[filteredDaycareArray[i]].age_preschool)==0)
-                        {
-                            daycaresToDelete.push(filteredDaycareArray[i]);
-                        }
-                    }
-                    if(selectedAge.localeCompare("age_school_age"))
-                    {
-                        if(no.localeCompare(database[filteredDaycareArray[i]].age_school_age)==0)
-                        {
-                            daycaresToDelete.push(filteredDaycareArray[i]);
-                        }
-                    }
-                }
-                filteredDaycareArray = updateDaycares();
-            }
-
-
-            if ((selectedAge2.localeCompare("noSelection")!=0))
-            {
-                for (i=0 ; i<filteredDaycareArray.length ; i++)
-                {
-                    if (selectedAge2.localeCompare("age_infant"))
-                    {
-                        if(no.localeCompare(database[filteredDaycareArray[i]].age_infant)==0)
-                        {
-                            daycaresToDelete.push(filteredDaycareArray[i]);
-                        }
-                    }
-                    if (selectedAge2.localeCompare("age_toddler"))
-                    {
-                        if(no.localeCompare(database[filteredDaycareArray[i]].age_toddler)==0)
-                        {
-                            daycaresToDelete.push(filteredDaycareArray[i]);
-                        }
-                    }
-                    if(selectedAge2.localeCompare("age_preschool"))
-                    {
-                        if(no.localeCompare(database[filteredDaycareArray[i]].age_preschool)==0)
-                        {
-                            daycaresToDelete.push(filteredDaycareArray[i]);
-                        }
-                    }
-                    if(selectedAge2.localeCompare("age_school_age"))
-                    {
-                        if(no.localeCompare(database[filteredDaycareArray[i]].age_school_age)==0)
-                        {
-                            daycaresToDelete.push(filteredDaycareArray[i]);
-                        }
-                    }
-                }
-                filteredDaycareArray = updateDaycares();
-            }
-        
-
-
-            if(selectedCapacity.localeCompare("noSelection")!=0)
-            {
-                for (i=0 ; i<filteredDaycareArray.length ; i++)
-                {
-                    if('total_licance_capacity' in database[filteredDaycareArray[i]])
-                    {
-                        currentDaycareCapacity = parseInt(database[filteredDaycareArray[i]].total_licance_capacity);
-                        if(selectedCapacity.localeCompare("20")==0)
-                        {
-                            if(currentDaycareCapacity>20)
-                            {
-                                daycaresToDelete.push(filteredDaycareArray[i]);
-                            }
-                        }
-                        if(selectedCapacity.localeCompare("40")==0)
-                        {
-                            if(currentDaycareCapacity<21 || currentDaycareCapacity>41)
-                            {
-                                daycaresToDelete.push(filteredDaycareArray[i]);
-                            }
-                        }
-                        if(selectedCapacity.localeCompare("60")==0)
-                        {
-                            if(currentDaycareCapacity<41 || currentDaycareCapacity>61)
-                            {
-                                daycaresToDelete.push(filteredDaycareArray[i]);
-                            }
-                        }
-                        if(selectedCapacity.localeCompare("80")==0)
-                        {
-                            if(currentDaycareCapacity<61 || currentDaycareCapacity>81)
-                            {
-                                daycaresToDelete.push(filteredDaycareArray[i]);
-                            }
-                        }
-                        if(selectedCapacity.localeCompare("100")==0)
-                        {
-                            if(currentDaycareCapacity<81 || currentDaycareCapacity>101)
-                            {
-                                daycaresToDelete.push(filteredDaycareArray[i]);
-                            }
-                        }
-                        if(selectedCapacity.localeCompare("101")==0)
-                        {
-                            if(currentDaycareCapacity<101)
-                            {
-                                daycaresToDelete.push(filteredDaycareArray[i]);
-                            }
-                        }
-                    }
-                    else
-                    {
-                        daycaresToDelete.push(filteredDaycareArray[i]);
-                    }
-                    
-                }
-                filteredDaycareArray = updateDaycares();
-            }
-
-            // this is all for testing purposes
-            //document.getElementById("testing").innerHTML = currentDaycares;
-            var object = document.getElementById("county");
-            var value = object.options[object.selectedIndex].value;
-            document.getElementById("testing").innerHTML = filteredDaycareArray;
-            document.getElementById("testing2").innerHTML = daycaresToDelete;
-            document.getElementById("testing3").innerHTML = uncommonValues;
-            showDaycares();
-            //window.alert(database);
-            //window.alert(daycare["age_range"]);
-            //if(daycare["age_range"] = "5 years - 12 years"){
-            //    window.alert("One found");
-            //}
-            
-            
-        }
-        /*function databaseFilter2()
-        {
-            var citySelected = 0;
-            var countySelected = 0;
-            var ageSelected = 0;
-            var capacitySelected = 0;
-            var typeSelected = 0;
-            var selectedComparer = "noSelection";
-
-            var database2 = {{ database | tojson }};
-            var deleteArray = [];
-
-            if (selectedComparer.localeCompare())
-        }*/
-        // THIS WILL BE LOADED WHEN THE HTML LOADS
-        showAllDaycares();
-        </script>
     </div>
 
 {% endblock content %}

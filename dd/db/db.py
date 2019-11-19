@@ -1,21 +1,17 @@
-import requests, json, sys # Allows the fetching and storing of the API calls
+import requests, json, sys
 from math import radians, cos, sin, sqrt, atan2
 
 # UPDATE DATABASE FILE
 # ============================================================================================================
-def updateDatabase(daycares):
+def updateDatabase(database):
     with open("dd/db/db.json", "w") as databaseFile:  # Opening database.json as truncate 
-        json.dump(daycares, databaseFile) # Dump the data into the file using the json class
+        json.dump(database, databaseFile) # Dump the data into the file using the json class
 # ============================================================================================================
 
 # FETCH UPDATED DATABASE FROM API
 # ============================================================================================================
 def fetchDatabase():
-    url = "https://data.novascotia.ca/resource/3j9v-yimg.json" # URL for API fetching
-    daycares = requests.get(url).json() # Request is the raw request information
-    updateDatabase(daycares) # Update the .json file 
-    updateDatabase(fixFormatting()) # Update the database again with the fixed data
-    updateDatabase(indexDaycares())
+    return requests.get("https://data.novascotia.ca/resource/3j9v-yimg.json").json()
 # ============================================================================================================
 
 # RETURN DATABASE AS DICT
@@ -25,17 +21,21 @@ def getDatabase():
         return json.load(databaseFile) # Return the database file as a dictionary using the json class
 # ============================================================================================================
 
-# RETURN 'AMOUNT' DAYCARES FROM START
+# GET DAYCARES MATCHING INDEXLIST
 # ============================================================================================================
 # TODO: Update so it returns daycares with matching indexes
 def getDaycares(indexList):
     database = getDatabase() # Get the database
-    return database[:indexList]
+    matchingDaycares = []
+    for daycare in database:
+        if daycare['index'] in indexList:
+            matchingDaycares.append(daycare)
+    return matchingDaycares
     # The .json file is just a list of dictionaries.
     # This is split the list from the beginning to the x-th item in the list
 # ============================================================================================================
 
-# GET SPECIFIC DAYCARE WITH INDEX
+# GET DAYCARE MATCHING INDEX
 # ============================================================================================================
 def getDaycare(index):
     database = getDatabase()
@@ -152,6 +152,46 @@ def fixFormatting():
     return database
 # This is a spaghetti mess...
 # ============================================================================================================
+
+# GET DAYCARES WHICH MATCH FILTERS
+# ============================================================================================================
+def filterDaycares(filters):
+    database = getDatabase()
+    matchingDaycares = []
+    for daycare in database:
+        if ('county' in filters and daycare["county"] != filters["county"]):
+            continue
+        if ('facility_type' in filters and daycare["facility_type"] != filters["facility_type"]):
+            continue
+        if ('max_capacity' in filters and 'total_licance_capacity' in daycare and int(daycare["total_licance_capacity"]) >= int(filters["max_capacity"]) ):
+            continue
+        if ('min_capacity' in filters and 'total_licance_capacity' in daycare and int(daycare["total_licance_capacity"]) >= int(filters['min_capacity']) ):
+            continue
+        if ('city' in filters and daycare["city"] != filters["city"]):
+            continue
+        if ('age_infant' in filters and daycare["age_infant"] != filters["age_infant"]):
+            continue
+        if ('age_toddler' in filters and daycare["age_toddler"] != filters["age_toddler"]):
+            continue
+        if ('age_preschool' in filters and daycare["age_preschool"] != filters["age_preschool"]):
+            continue
+        if ('age_school_age' in filters and daycare["age_school_age"] != filters["age_school_age"]):
+            continue
+        if ('prog_full_day' in filters and daycare["prog_full_day"] != filters["prog_full_day"]):
+            continue
+        if ('prog_part_day' in filters and daycare["prog_part_day"] != filters["prog_part_day"]):
+            continue
+        if ('annual_inspection' in filters and "annual_inspection" not in daycare):
+            continue
+        if ('annual_unannounced_inspection' in filters and "annual_unannounced_inspection" not in daycare):
+            continue
+        matchingDaycares.append(daycare['index'])
+
+    return getDaycares(matchingDaycares)
+
+# ============================================================================================================
+
+
 
 
 # DEBUG
