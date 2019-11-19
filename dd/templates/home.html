@@ -28,15 +28,15 @@
                 <h2 class = "nearby-text">Nearby Daycares</h2>
                 <div class = " nearby-items flexv">
                     {% for daycare in nearby %}
-                    <div class = "nearby-wrap c1d">
+                    <a class = "nearby-wrap c1d" href = "daycare/{{ daycare['index'] }}">
                         <h4 class = "raw nearby-name">{{ daycare["facility_name"] }}</h4>
                         <h5 class = "raw nearby-address">{{ daycare["address"] }}, {{ daycare["city"] }}</h5>
                         <h6 class = "raw nearby-sub-item1">Ages: {{ daycare["age_range"] }}</h6>
                         <div class = "nearby-sub flexh">
                             <h6 class = "raw nearby-sub-item2">Phone: {{ daycare["phone"] }}</h6>
-                            <h6 class = "raw">Email: <a href="">{{ daycare["email"] }}</a></h6>
+                            <h6 class = "raw">Email: {{ daycare["email"] }}</h6>
                         </div>
-                    </div>
+                    </a>
                     {% endfor %}
                 </div>
             </div>
