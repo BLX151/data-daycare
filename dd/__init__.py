@@ -38,8 +38,39 @@ def directory():
 @app.route('/filterDirectory', methods = ["POST", "GET"])
 def filterDirectory():
     filters = {}
-    filters["county"] = request.form.get('county')
-    return filters
+    if (request.form.get('county') != "noSelection"):
+        filters['county'] = request.form.get('county')
+    if (request.form.get('city') != "noSelection"):
+        filters['city'] = request.form.get('city')
+    if (request.form.get('min_capacity') != ""):
+        filters['min_capacity'] = request.form.get('min_capacity')
+    if (request.form.get('max_capacity') != ""):
+        filters['max_capacity'] = request.form.get('max_capacity')
+    if (request.form.get('age_infant') == "on"):
+        filters['age_infant'] = "Yes"
+    if (request.form.get('age_toddler') == "on"):
+        filters['age_toddler'] = "Yes"
+    if (request.form.get('age_preschool') == "on"):
+        filters['age_preschool'] = "Yes"
+    if (request.form.get('age_school_age') == "on"):
+        filters['age_school_age'] = "Yes"
+    if (request.form.get('prog_full_day') == "on"):
+        filters['prog_full_day'] = "Yes"
+    if (request.form.get('prog_part_day') == "on"):
+        filters['prog_part_day'] = "Yes"
+    if (request.form.get('annualInspection') == "on"):
+        filters['annual_inspection'] = "Yes"
+    if (request.form.get('unannouncedInspection') == "on"):
+        filters['annual_unannounced_inspection'] = "Yes"
+
+    indexes = db.filterDaycares(filters)
+
+    test = {
+        "indexes": indexes,
+        "length": len(indexes)
+    }
+
+    return render_template("directory.html", database = indexes)
 
 # The about route
 @app.route('/about')
