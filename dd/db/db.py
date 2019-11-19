@@ -30,7 +30,7 @@ def getDatabase():
 # TODO: Update so it returns daycares with matching indexes
 def getDaycares(indexList):
     database = getDatabase() # Get the database
-    return database[:amount]
+    return database[:indexList]
     # The .json file is just a list of dictionaries.
     # This is split the list from the beginning to the x-th item in the list
 # ============================================================================================================
