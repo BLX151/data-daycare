@@ -1,3 +1,13 @@
 .filter {width: 400px;}
-.daycare-box {margin: 10px;}
+.daycare-box {
+    margin-right: 50px;
+    margin-left: 50px;
+}
 .directory {flex-grow: 1;}
+
+.individual_daycare {
+    background-color: rgb(  5, 176, 131);
+    display:block;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}

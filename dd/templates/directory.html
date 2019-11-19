@@ -16,12 +16,14 @@
 
             {% for daycare in database %}
                 <div class = "daycare-box red">
-                    <h4>{{ daycare["facility_name"] }} : INDEX = {{ daycare["index"] }}</h4>
+                    <div class = "individual_daycare">
+                        <h3>&nbsp {{ daycare["facility_name"] }}</h3>
+                        <a href="/daycare/{{ daycare["index"]}}">Click here for more info </a>
+                        <p>(delete this later)INDEX = {{ daycare["index"] }}</p>
+                    </div>
                     
-                    
-
                 </div>
-            {% endfor %}*/-->
+            {% endfor %}
             <!-- This is where all of the filtering select boxes are
             This hasn't been structured to look good yet. The trick with this
             is that the values of each option are identical to the specific
