@@ -9,33 +9,20 @@
 
 {% block content %}
 
-    <div class = "flexh">
-        <div class = "directory flexv c3l">
-            <!--This is where the daycares are displayed-->
-
-
+    <div class = "directory flexh">
+        
+        <div class = "list flexv c3">
             {% for daycare in database %}
-                <a href = "/daycare/{{ daycare['index']}}" class="daycareLink">
-                    <div class = "individual_daycare">
-                        <h3 class="raw"> {{ daycare["facility_name"] }}</h3>
-                    </div>
+                <a class="daycare-wrap" href = "/daycare/{{ daycare['index']}}">
+                    <h3 class="raw daycare-name"> {{ daycare["facility_name"] }}</h3>
                 </a>
             {% endfor %}
-            <!-- This is where all of the filtering select boxes are
-            This hasn't been structured to look good yet. The trick with this
-            is that the values of each option are identical to the specific
-            option within the database-->
-            <!--TO DO:
-            THIS LOOKS LIKE ASS AND TURNS OUT YOU CAN SORT EVERYTHING ALPHABETICALLY
-            EXCEPT FOR SELECT BOX DROP DOWN MENUS. SO NEED TO FIGURE OUT A WAY HOW TO
-            SORT THESE OPTIONS ALPHABETICALLY WITHIN THIS DOCUMENT ITSELF.-->
         </div>
-        <div class = "filter c3l">
-            <h3>FILTERS</h3>
-            <p id="testing"> </p>
-            <p id="testing2"> </p>
-            <p id="testing3"> </p>
+        
+        <div class = "filters c3">
             
+            <h3>FILTERS</h3>
+
             <form method = "POST" action = "{{ url_for('filterDirectory') }}">
                 <div>
                     <select name = "county" id="county">
@@ -58,15 +45,7 @@
                         <option value="Digby County"> Digby </option>
                     </select>
                 </div>
-    
-                <!--<div>
-                    <select id="daycare_type" name='daycare_type'>
-                        <option value="noSelection"> Any Type </option>
-                        <option value="FamilyHome"> Family Home </option>
-                        <option value="DayCare"> Day Care </option>
-                    </select>
-                </div>-->
-    
+
                 <div>
                     <select id="city" name='city'>
                         <option value="noSelection"> Any City </option>

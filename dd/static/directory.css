@@ -1,27 +1,15 @@
-.filter {width: 400px;}
-.daycare-box {
-    margin-right: 50px;
-    margin-left: 50px;
-}
-.directory {flex-grow: 1;}
 
-.individual_daycare {
+.directory {}
+.list {flex-grow: 1; margin-left: 8px; margin-right: 8px; margin-bottom: 8px; border-radius: 10px;}
+.filters {width: 400px; margin-right: 8px; margin-bottom: 8px; border-radius: 10px;}
+
+.daycare-wrap {
+    text-decoration: none;
+    color: black;
     background-color: rgb(  5, 176, 131);
-    display:block;
     border-radius: 10px;
     margin: 5px 10px;
     text-decoration: none;
     padding: 5px 10px;
 }
-
-.c3l    {background-color: rgb( 51, 221, 177);}
-.c3     {background-color: rgb(  6, 214, 160);}
-.c3d    {background-color: rgb(  5, 176, 131);}
-
-
-.daycareLink {
-    text-decoration: none;
-    color: black;
-}
-
-.daycareLink:hover { color: rgb( 51, 221, 177);}
+.daycare-wrap:hover { background-color: rgb( 51, 221, 177);}

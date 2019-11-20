@@ -10,22 +10,10 @@
         <div class = "home flexh">
 
             <div class = "main flexv c1">
-                <div class = "title">
-                    <h1 class = "title-text">Data Daycare</h1>
-                </div>
-                <div class = "search flexv">
-                    <div class = "search-wrapper">
-                        <h3 class = "search-text">FIND THE PERFECT DAYCARE TO SUIT YOU</h3>
-                        <form class = " search-input flexv">
-                            <input class = "search-bar" type = "text">
-                            <input class = "search-button" type = "submit" value = "Search">
-                        </form>
-                    </div>
-                </div>
             </div>
 
             <div class = "nearby flexv c1">
-                <h2 class = "nearby-text">Nearby Daycares</h2>
+                <h2 class = "raw nearby-text">Nearby Daycares</h2>
                 <div class = " nearby-items flexv">
                     {% for daycare in nearby %}
                     <a class = "nearby-wrap c1d" href = "daycare/{{ daycare['index'] }}">
