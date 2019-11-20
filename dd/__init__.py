@@ -9,8 +9,11 @@ app = Flask(__name__) # Instantiate a copy of the Flask class called app
 app.register_blueprint(daycare) # Register the daycare blueprint into the app
 
 def getUserGeoData():
-    user_ip = requests.get('https://get.geojs.io/v1/ip.json').json()['ip']
-    return requests.get('https://get.geojs.io/v1/ip/geo/' + user_ip + '.json').json()
+    if request.remote_addr == '127.0.0.1':
+        remote_ip = requests.get('https://get.geojs.io/v1/ip.json').json()['ip']
+    else:
+        remote_ip = request.remote_addr
+    return requests.get('https://get.geojs.io/v1/ip/geo/' + remote_ip + '.json').json()
 
 # Our base domain page, @app.route creates a webpage at
 # www.ourdomain.com/<routename> which anyone can access
