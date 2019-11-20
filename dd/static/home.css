@@ -2,7 +2,7 @@
 
 .main {flex-grow:1; display:flex; margin-right: 8px; border-radius: 10px;}
 
-/*.title {}*/
+.title-wrap {margin: auto;}
 .title-text {margin-top: 15px;}
 
 .search {flex-grow:1;}
@@ -45,7 +45,6 @@
 .nearby-sub-item2 {width:125px;}
 .nearby-sub-item3 {width:215px;}
 
-/* width */
 ::-webkit-scrollbar {width: 8px;}
 ::-webkit-scrollbar-track {background: rgb(239,  71, 111);}
 ::-webkit-scrollbar-thumb {background: rgb(196,  59,  91);}
