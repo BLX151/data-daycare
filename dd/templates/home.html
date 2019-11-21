@@ -20,12 +20,12 @@
                 <h2 class = "title">Nearby Daycares</h2>
                 <div class = "scroll cont flexv">
                     {% for daycare in nearby %}
-                    <a class = "scroll-item panel c1d" href = "daycare/{{ daycare['index'] }}">
+                    <a class = "scroll-item panel link c1d" href = "daycare/{{ daycare['index'] }}">
                         <h4 class = "raw nearby-name">{{ daycare["facility_name"] }}</h4>
                         <h5 class = "raw nearby-address">{{ daycare["address"] }}, {{ daycare["city"] }}</h5>
-                        <h6 class = "raw nearby-sub-item1">Ages: {{ daycare["age_range"] }}</h6>
+                        <h6 class = "raw nearby-age">Ages: {{ daycare["age_range"] }}</h6>
                         <div class = "nearby-sub flexh">
-                            <h6 class = "raw nearby-sub-item2">Phone: {{ daycare["phone"] }}</h6>
+                            <h6 class = "raw nearby-phone">Phone: {{ daycare["phone"] }}</h6>
                             <h6 class = "raw">Email: {{ daycare["email"] }}</h6>
                         </div>
                     </a>

@@ -35,14 +35,14 @@ def map():
 @app.route('/directory', methods = ["POST", "GET"])
 def directory():
     filters = {}
-    if (request.form.get('county') != "noSelection"):
+    if (request.form.get('county') != "noSelection" and request.form.get('county') != None ):
         filters['county'] = request.form.get('county')
-    if (request.form.get('city') != "noSelection"):
+    if (request.form.get('city') != "noSelection" and request.form.get('city') != None):
         filters['city'] = request.form.get('city')
-    if (request.form.get('min_capacity') != ""):
-        filters['min_capacity'] = request.form.get('min_capacity')
-    if (request.form.get('max_capacity') != ""):
-        filters['max_capacity'] = request.form.get('max_capacity')
+    if (request.form.get('min_capacity') != "" and request.form.get('min_capacity') != None ):
+        filters['min_capacity'] = int(request.form.get('min_capacity'))
+    if (request.form.get('max_capacity') != "" and request.form.get('max_capacity') != None ):
+        filters['max_capacity'] = int(request.form.get('max_capacity'))
     if (request.form.get('age_infant') == "on"):
         filters['age_infant'] = "Yes"
     if (request.form.get('age_toddler') == "on"):
@@ -60,7 +60,9 @@ def directory():
     if (request.form.get('unannouncedInspection') == "on"):
         filters['annual_unannounced_inspection'] = "Yes"
 
-    if filters == "":
+    # return filters
+
+    if not filters:
         indexes = db.getDatabase()
     else:
         indexes = db.filterDaycares(filters)

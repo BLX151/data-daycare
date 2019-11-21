@@ -1,17 +1,16 @@
 
-.directory {flex-grow: 1; margin-right: 8px; margin-bottom: 8px; margin-left: 8px; border-radius: 10px; overflow: hidden;}
+.link:hover { background-color: rgb( 51, 221, 177);}
 
-.list {flex-grow:1; border-radius: 10px; overflow: hidden;}
-.list-text {text-align: center;}
-.list-items {flex-grow: 1; overflow: auto;}
-.list-wrap {
-    text-decoration: none;
-    color: black;
-    margin: 4px 8px;
-    padding: 8px 8px;
-    border-radius: 10px;
-}
-.list-wrap:hover { background-color: rgb( 51, 221, 177);}
+.name {margin-bottom:4px; transform: scaleY(1.15);}
+.address {margin-bottom:2px;}
+.age {width:175px;}
+.phone {width:135px;}
+
+
+::-webkit-scrollbar {width: 8px;}
+::-webkit-scrollbar-track {background: rgb(  6, 214, 160);}
+::-webkit-scrollbar-thumb {background: rgb(  5, 176, 131);}
+::-webkit-scrollbar-thumb:hover {background: rgb( 51, 221, 177);}
 
 .filter {width: 350px; border-radius: 10px; margin-left: 8px;}
 .filter-text {text-align: center;margin-top:15px;}
@@ -33,7 +32,3 @@
 
 .submit {margin-top: 8px; margin-left: 8px; margin-right: 8px;border-radius: 10px; padding: 4px 4px;}
 
-::-webkit-scrollbar {width: 8px;}
-::-webkit-scrollbar-track {background: rgb(  6, 214, 160);}
-::-webkit-scrollbar-thumb {background: rgb(  5, 176, 131);}
-::-webkit-scrollbar-thumb:hover {background: rgb( 51, 221, 177);}

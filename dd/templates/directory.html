@@ -9,20 +9,26 @@
 
 {% block content %}
 
-    <div class = "directory flexh">
+    <div class = "page flexh">
         
-        <div class = "list c3">
-            <h3 class = "raw list-text">Daycares</h3>
-            <div class = "list-items flexv">
+        <div class = "panel scroll-hide flexv fgrow c3">
+            <h3 class = "title">Daycares</h3>
+            <div class = "scroll cont flexv">
                 {% for daycare in database %}
-                <a class="list-wrap c3d" href = "/daycare/{{ daycare['index']}}">
-                    <h4 class="raw daycare-name"> {{ daycare["facility_name"] }}</h4>
+                <a class="scroll-item panel link c3d" href = "/daycare/{{ daycare['index']}}">
+                    <h4 class="raw name"> {{ daycare["facility_name"] }}</h4>
+                    <h5 class = "raw address">{{ daycare["address"] }}, {{ daycare["city"] }}</h5>
+                    <h6 class = "raw age">Ages: {{ daycare["age_range"] }}</h6>
+                        <div class = "flexh">
+                            <h6 class = "raw phone">Phone: {{ daycare["phone"] }}</h6>
+                            <h6 class = "raw">Email: {{ daycare["email"] }}</h6>
+                        </div>
                 </a>
                 {% endfor %}
             </div>
         </div>
         
-        <div class = "filter c3">
+        <div class = "filter panel c3">
             
             <h3 class = "raw filter-text">FILTERS</h3>
 

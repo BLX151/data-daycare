@@ -1,23 +1,13 @@
 .title-wrap {margin: auto;}
 
 .nearby {width:500px;}
-.nearby-text {margin-top:15px; text-align:center;}
-.nearby-items {flex-grow:1; overflow: auto;}
-.nearby-wrap
-{
-    text-decoration: none;
-    color: black;
-    margin: 4px 8px;
-    padding: 8px 8px;
-    border-radius: 10px;
-}
-.nearby-wrap:hover {background-color: rgb(241, 104, 137);}
 
+.link:hover {background-color: rgb(241, 104, 137);}
+
+.nearby-address { margin-bottom:2px;}
+.nearby-phone {width:135px;}
 .nearby-name {margin-bottom:4px; transform: scaleY(1.15);}
-.nearby-address {margin-bottom:2px;}
-.nearby-sub-item1 {width:160px;}
-.nearby-sub-item2 {width:125px;}
-.nearby-sub-item3 {width:215px;}
+.nearby-age {width:160px;}
 
 ::-webkit-scrollbar {width: 8px;}
 ::-webkit-scrollbar-track {background: rgb(239,  71, 111);}
