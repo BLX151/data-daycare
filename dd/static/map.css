@@ -1,3 +1,4 @@
-.map-container {flex-grow: 1;}
-.map {height: 100%; flex-grow: 1;}
-.filter {width: 400px;}
+.map-page {flex-grow: 1; margin-left: 8px; margin-right: 8px; margin-bottom: 8px;}
+.map-container {flex-grow: 1; padding: 8px 8px; border-radius: 10px;}
+.map {height: 100%; flex-grow: 1; border-radius: 10px;}
+.filter {width: 400px; margin-left: 8px; border-radius: 10px;}

@@ -5,12 +5,21 @@
     It will take the layout.html file, and it will replace wherever in that file in the content
     block. Ask for further details. -->
 
+{% block head %}
+
+<link rel = "stylesheet" href = "{{ url_for('static', filename = 'about.css') }}">
+
+{% endblock head %}
+
 {% block content %}
-    <h1>About Page</h1>
-    <h3>Contributers</h3>
-    <p>Tyler McKay, Ben Kelln, Kyle Sullivan</p>
-    <h3>Data Aggregate</h3>
-    <p>Nova Scotia Open Data API</p>
-    <h3>Who's Gay?</h3>
-    <p>I AM</p>
+    
+    <div class = "about flexv c4">
+        <div class = "about-wrap">
+            <h1 class = "raw title">About Us</h1>
+            <h3 class = "raw header">Contributers</h3>
+            <h6 class = "raw text">Tyler McKay, Ben Kelln, Kyle Sullivan</h6>
+            <h3 class = "raw header">Data Aggregate</h3>
+            <h6 class = "raw text">Nova Scotia Open Data API</h6>
+        </div>
+    </div>
 {% endblock content %}

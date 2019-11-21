@@ -7,19 +7,20 @@
 {% endblock head %}
 
 {% block content %}
-        <div class = "home flexh">
+        <div class = "page flexh">
 
-            <div class = "main flexv c1">
+            <div class = "main panel fgrow flexv c1">
                 <div class = "title-wrap">
-                    <h1 class = "title-text">Data Daycare</h1>
+                    <h1 class = "raw title-title">Data Daycare</h1>
+                    <h4 class = "raw title-slogan">Your one stop shop for quality daycares</h4>
                 </div>
             </div>
 
-            <div class = "nearby flexv c1">
-                <h2 class = "raw nearby-text">Nearby Daycares</h2>
-                <div class = " nearby-items flexv">
+            <div class = "nearby panel scroll-hide flexv c1">
+                <h2 class = "title">Nearby Daycares</h2>
+                <div class = "scroll cont flexv">
                     {% for daycare in nearby %}
-                    <a class = "nearby-wrap c1d" href = "daycare/{{ daycare['index'] }}">
+                    <a class = "scroll-item panel c1d" href = "daycare/{{ daycare['index'] }}">
                         <h4 class = "raw nearby-name">{{ daycare["facility_name"] }}</h4>
                         <h5 class = "raw nearby-address">{{ daycare["address"] }}, {{ daycare["city"] }}</h5>
                         <h6 class = "raw nearby-sub-item1">Ages: {{ daycare["age_range"] }}</h6>

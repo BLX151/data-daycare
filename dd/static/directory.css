@@ -1,31 +1,37 @@
 
-.directory {flex-grow: 1; margin-right: 8px; margin-bottom: 8px; margin-left: 8px;}
-.list {flex-grow: 1; border-radius: 10px; overflow: hidden;}
+.directory {flex-grow: 1; margin-right: 8px; margin-bottom: 8px; margin-left: 8px; border-radius: 10px; overflow: hidden;}
+
+.list {flex-grow:1; border-radius: 10px; overflow: hidden;}
+.list-text {text-align: center;}
 .list-items {flex-grow: 1; overflow: auto;}
-.filter {width: 400px; border-radius: 10px; margin-left: 8px;}
+.list-wrap {
+    text-decoration: none;
+    color: black;
+    margin: 4px 8px;
+    padding: 8px 8px;
+    border-radius: 10px;
+}
+.list-wrap:hover { background-color: rgb( 51, 221, 177);}
+
+.filter {width: 350px; border-radius: 10px; margin-left: 8px;}
 .filter-text {text-align: center;margin-top:15px;}
 .filter-select {
     border-radius: 10px;
-    margin-top: 8px;
-    margin-right: 8px;
-    margin-left: 8px;
-    padding: 4px 8px;
+    padding: 8px 8px;
+    width: 100%;
 }
 .filter-wrap {margin-right: 8px; margin-top: 8px; margin-left: 8px;}
 .filter-caption {text-align: center;}
 .filter-input {border-radius: 10px; padding: 4px 8px;}
 
-.daycare-wrap {
-    text-decoration: none;
-    color: black;
-    background-color: rgb(  5, 176, 131);
-    border-radius: 10px;
-    margin-top: 8px;
-    margin-right: 8px;
-    margin-left: 8px;
-    padding: 5px 10px;
-}
-.daycare-wrap:hover { background-color: rgb( 51, 221, 177);}
+.filter-section { margin-left: 8px; margin-right: 8px; margin-top: 8px; padding: 8px 8px; border-radius: 10px;}
+.filter-section-title { text-align: center; margin-bottom: 4px;}
+.checkbox {margin: 4px 4px;}
+.checkbox-warp {padding: 2px 2px;}
+.filter-checkbox-text {margin-top: auto; margin-bottom: auto;}
+.filter-column {flex-grow: 1;}
+
+.submit {margin-top: 8px; margin-left: 8px; margin-right: 8px;border-radius: 10px; padding: 4px 4px;}
 
 ::-webkit-scrollbar {width: 8px;}
 ::-webkit-scrollbar-track {background: rgb(  6, 214, 160);}
