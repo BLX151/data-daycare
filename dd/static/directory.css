@@ -1,27 +1,33 @@
-.filter {width: 400px;}
-.daycare-box {
-    margin-right: 50px;
-    margin-left: 50px;
-}
-.directory {flex-grow: 1;}
 
-.individual_daycare {
-    background-color: rgb(  5, 176, 131);
-    display:block;
+.directory {flex-grow: 1; margin-right: 8px; margin-bottom: 8px; margin-left: 8px;}
+.list {flex-grow: 1; border-radius: 10px; overflow: hidden;}
+.list-items {flex-grow: 1; overflow: auto;}
+.filter {width: 400px; border-radius: 10px; margin-left: 8px;}
+.filter-text {text-align: center;margin-top:15px;}
+.filter-select {
     border-radius: 10px;
-    margin: 5px 10px;
-    text-decoration: none;
-    padding: 5px 10px;
+    margin-top: 8px;
+    margin-right: 8px;
+    margin-left: 8px;
+    padding: 4px 8px;
 }
+.filter-wrap {margin-right: 8px; margin-top: 8px; margin-left: 8px;}
+.filter-caption {text-align: center;}
+.filter-input {border-radius: 10px; padding: 4px 8px;}
 
-.c3l    {background-color: rgb( 51, 221, 177);}
-.c3     {background-color: rgb(  6, 214, 160);}
-.c3d    {background-color: rgb(  5, 176, 131);}
-
-
-.daycareLink {
+.daycare-wrap {
     text-decoration: none;
     color: black;
+    background-color: rgb(  5, 176, 131);
+    border-radius: 10px;
+    margin-top: 8px;
+    margin-right: 8px;
+    margin-left: 8px;
+    padding: 5px 10px;
 }
+.daycare-wrap:hover { background-color: rgb( 51, 221, 177);}
 
-.daycareLink:hover {background-color: rgb( 51, 221, 177);}
+::-webkit-scrollbar {width: 8px;}
+::-webkit-scrollbar-track {background: rgb(  6, 214, 160);}
+::-webkit-scrollbar-thumb {background: rgb(  5, 176, 131);}
+::-webkit-scrollbar-thumb:hover {background: rgb( 51, 221, 177);}
