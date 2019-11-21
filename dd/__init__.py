@@ -29,14 +29,8 @@ def map():
     return render_template("map.html", database = db.getDatabase())
     # database variable will be accessable from within map.html
 
-# The directory route
-@app.route('/directory')
+@app.route('/directory', methods = ["POST", "GET"])
 def directory():
-    return render_template("directory.html", database = db.getDatabase())
-    # database variable will be accessable from within directory.html
-
-@app.route('/filterDirectory', methods = ["POST", "GET"])
-def filterDirectory():
     filters = {}
     if (request.form.get('county') != "noSelection"):
         filters['county'] = request.form.get('county')
@@ -63,12 +57,10 @@ def filterDirectory():
     if (request.form.get('unannouncedInspection') == "on"):
         filters['annual_unannounced_inspection'] = "Yes"
 
-    indexes = db.filterDaycares(filters)
-
-    test = {
-        "indexes": indexes,
-        "length": len(indexes)
-    }
+    if filters == "":
+        indexes = db.getDatabase()
+    else:
+        indexes = db.filterDaycares(filters)
 
     return render_template("directory.html", database = indexes)
 
