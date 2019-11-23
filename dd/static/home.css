@@ -1,13 +1,15 @@
-.title-wrap {margin: auto;}
 
+.dd {line-height: 125px;}
+.daycare {padding: 8px 8px;}
 .nearby {width:500px;}
 
 .link:hover {background-color: rgb(241, 104, 137);}
 
-.nearby-address { margin-bottom:2px;}
+
+/* .nearby-address { margin-bottom:2px;}
 .nearby-phone {width:135px;}
 .nearby-name {margin-bottom:4px; transform: scaleY(1.15);}
-.nearby-age {width:160px;}
+.nearby-age {width:160px;} */
 
 ::-webkit-scrollbar {width: 8px;}
 ::-webkit-scrollbar-track {background: rgb(239,  71, 111);}

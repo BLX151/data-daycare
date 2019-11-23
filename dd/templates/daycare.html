@@ -1,72 +1,119 @@
 {% extends 'layout.html' %}
 
+{% block head %}
+
+<link rel = "stylesheet" href = "{{ url_for('static', filename = 'daycare.css') }}">
+
+{% endblock head %}
+
 {% block content %}
 
-<h1>PAGE FOR DAYCARE : {{ daycare_info["facility_name"] }}</h1>
-<h2>INDEX : {{ index }}</h2>
+<script>
+    var colors = ['#EF476F', '#FFD166', '#06D6A0', '#118AB2'];
+    var color = colors[Math.floor(Math.random() * colors.length)];
+    switch (color)
+    {
+        case '#EF476F':
+            document.documentElement.style.setProperty('--bg-colorl', '#F16889');
+            document.documentElement.style.setProperty('--bg-color', color);
+            document.documentElement.style.setProperty('--bg-colord', '#C4476F');
+            break;
+        case '#FFD166':
+            document.documentElement.style.setProperty('--bg-colorl', '#FFD981');
+            document.documentElement.style.setProperty('--bg-color', color);
+            document.documentElement.style.setProperty('--bg-colord', '#D1AC54');
+            break;
+        case '#06D6A0':
+            document.documentElement.style.setProperty('--bg-colorl', '#33DDB1');
+            document.documentElement.style.setProperty('--bg-color', color);
+            document.documentElement.style.setProperty('--bg-colord', '#05B083');
+            break;
+        case '#118AB2':
+            document.documentElement.style.setProperty('--bg-colorl', '#3C9FC0');
+            document.documentElement.style.setProperty('--bg-color', color);
+            document.documentElement.style.setProperty('--bg-colord', '#0E7192');
+            break;
+    }
+</script>
 
-{% if daycare_info["annual_inspection"] %}
-    <p>Latest announced inspection: {{daycare_info["annual_inspection"]}}</p>
-{% endif %}
+<div class = "fgrow flexv ">
 
-{% if daycare_info["annual_unannounced_inspection"] %}
-    <p>Latest unannounced inspection: {{daycare_info["annual_unannounced_inspection"]}}</p>
-{% endif %}
+    <div class = "t-panel panel">
+        <h2 class = "title">{{ daycare_info["facility_name"] }}</h2>
+    </div>
 
-{% if daycare_info["phone"] %}
-    <p>Phone: {{daycare_info["phone"]}}</p>
-{% endif %}
+    <div class = "flexh fgrow">
+        <div class = "d-panel panel">
+            {% if daycare_info["annual_inspection"] %}
+            <p>Latest announced inspection: {{daycare_info["annual_inspection"]}}</p>
+            {% endif %}
+            
+            {% if daycare_info["annual_unannounced_inspection"] %}
+                <p>Latest unannounced inspection: {{daycare_info["annual_unannounced_inspection"]}}</p>
+            {% endif %}
+            
+            {% if daycare_info["phone"] %}
+                <p>Phone: {{daycare_info["phone"]}}</p>
+            {% endif %}
+            
+            {% if daycare_info["email"] %}
+                <p>Email: {{daycare_info["email"]}}</p>
+            {% endif %}
+            
+            <p>Address: {{ daycare_info["address"] }}, {{ daycare_info["city"] }}, {{ daycare_info["postal"] }}</b></p>
+            
+            <p>Care options:
+                {% if daycare_info["prog_full_day"] == "Yes" %}
+                    Full-day   
+                {% endif %}
+            
+                {% if daycare_info["prog_part_day"] == "Yes" %}
+                    Part-day   
+                {% endif %}
+            
+                {% if daycare_info["prog_school_age"] == "Yes" %}
+                    School-day
+                {% endif %}
+            </p>
+            
+            <p>Care ages: 
+                {% if daycare_info["age_infant"] == "Yes" %}
+                    Infant   
+                {% endif %}
+            
+                {% if daycare_info["age_toddler"] == "Yes" %}
+                    Toddler
+                {% endif %}
+            
+                {% if daycare_info["age_preschool"] == "Yes" %}
+                    Preschool
+                {% endif %}
+            
+                {% if daycare_info["age_school_age"] == "Yes" %}
+                    School-age 
+                {% endif %}
+            
+                {% if daycare_info["age_range"] %}
+                    ({{daycare_info["age_range"]}})
+                {% endif %}
+            </p>
+            
+            {% if daycare_info["total_licance_capacity"] %}
+                <p>Total care capacity: {{daycare_info["total_licance_capacity"]}}</p>
+            {% endif %}
+            
+            {% if daycare_info["facility_identifier"] %}
+                <p>Registered daycare number: {{daycare_info["facility_identifier"]}}</p>
+            {% endif %}
+        </div>
 
-{% if daycare_info["email"] %}
-    <p>Email: {{daycare_info["email"]}}</p>
-{% endif %}
+        <div class = "m-panel panel fgrow">
 
-<p>Address: {{ daycare_info["address"] }}, {{ daycare_info["city"] }}, {{ daycare_info["postal"] }}</b></p>
-
-<p>Care options:
-    {% if daycare_info["prog_full_day"] == "Yes" %}
-        Full-day   
-    {% endif %}
-
-    {% if daycare_info["prog_part_day"] == "Yes" %}
-        Part-day   
-    {% endif %}
-
-    {% if daycare_info["prog_school_age"] == "Yes" %}
-        School-day
-    {% endif %}
-</p>
-
-<p>Care ages: 
-    {% if daycare_info["age_infant"] == "Yes" %}
-        Infant   
-    {% endif %}
-
-    {% if daycare_info["age_toddler"] == "Yes" %}
-        Toddler
-    {% endif %}
-
-    {% if daycare_info["age_preschool"] == "Yes" %}
-        Preschool
-    {% endif %}
-
-    {% if daycare_info["age_school_age"] == "Yes" %}
-        School-age 
-    {% endif %}
-
-    {% if daycare_info["age_range"] %}
-        ({{daycare_info["age_range"]}})
-    {% endif %}
-</p>
-
-{% if daycare_info["total_licance_capacity"] %}
-    <p>Total care capacity: {{daycare_info["total_licance_capacity"]}}</p>
-{% endif %}
-
-{% if daycare_info["facility_identifier"] %}
-    <p>Registered daycare number: {{daycare_info["facility_identifier"]}}</p>
-{% endif %}
-
+        </div>
+    </div>
+    
+    
+</div>
 
 {% endblock content %}
 

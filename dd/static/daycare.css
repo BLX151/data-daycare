@@ -1,0 +1,20 @@
+
+:root {
+    --bg-colorl: rgb(241, 104, 137);
+    --bg-color:  rgb(239,  71, 111);
+    --bg-colord: rgb(196,  59,  91);
+}
+
+
+.t-panel
+{
+    background-color: var(--bg-color);
+}
+.d-panel
+{
+    background-color: var(--bg-color);
+}
+.m-panel
+{
+    background-color: var(--bg-color);
+}

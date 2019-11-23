@@ -1,5 +1,7 @@
-.about {flex-grow: 1; border-radius: 10px; margin-left: 8px; margin-right: 8px; margin-bottom: 8px;}
-.about-wrap {margin: auto;}
+
+.about {justify-content: center; align-items: center;}
+.about-title {width: 650px; height: 175px; line-height: 150px;}
+.about-section {width: 350px; height: 75px; justify-content: center;}
 
 .title {text-align: center;}
 .header {text-align: center;}
