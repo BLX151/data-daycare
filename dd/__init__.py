@@ -1,19 +1,18 @@
 # import flask class Flask which contatins all of the internal 
 # web server logic
 from flask import Flask, render_template, url_for, request
-from db import db
-from daycare.daycare import daycare
+from dd.db import db
+from dd.daycare.daycare import daycare
 import requests
 
 app = Flask(__name__) # Instantiate a copy of the Flask class called app
-
 app.register_blueprint(daycare) # Register the daycare blueprint into the app
 
 def getUserGeoData():
     if request.remote_addr == '127.0.0.1':
         remote_ip = requests.get('https://get.geojs.io/v1/ip.json').json()['ip']
     else:
-        remote_ip = request.environ.get('HTTP_X_REAL_IP')
+        remote_ip = request.remote_addr
     return requests.get('https://get.geojs.io/v1/ip/geo/' + remote_ip + '.json').json()
 
 # Our base domain page, @app.route creates a webpage at
@@ -23,12 +22,11 @@ def getUserGeoData():
 @app.route('/home')
 def home():
     nearby = db.getByDistance(25, 15, getUserGeoData())
-    
     return render_template('home.html', nearby = nearby)
     # Return the html file to be displayed on the routed page
     # nearby variable will be availble to access inside the html file
 
-# # The map route
+# The map route
 @app.route('/map', methods = ["POST", "GET"])
 def map():
     filters = {}
@@ -108,6 +106,3 @@ def directory():
 @app.route('/about')
 def about():
     return render_template('about.html')
-
-if __name__ == "__main__":
-    app.run()

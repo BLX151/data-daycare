@@ -15,4 +15,11 @@
 .info {
     text-align: center;
 }
-
+.bold {
+    line-height: 30px;
+    margin: 4px 8px;
+}
+.reg {
+    line-height: 30px;
+    margin: 4px 8px;
+}
