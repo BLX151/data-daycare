@@ -53,7 +53,7 @@ p  {font-size:13; font-family:"Nunito"; font-weight:500;}
 
 
 /* NAVBAR ================================================================================================= */
-.nav-bar {justify-content:space-evenly;padding: 4px 4px; padding-bottom: 0px;}
+.nav-bar {justify-content:space-evenly}
 .nav-btn {text-decoration: none; color: black}
 
 .home-text:hover       {background-color:white; color: rgb(241, 104, 137);}

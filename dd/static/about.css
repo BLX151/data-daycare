@@ -2,6 +2,8 @@
 .about {justify-content: center; align-items: center;}
 .about-title {width: 650px; height: 175px; line-height: 150px;}
 .about-section {width: 350px; height: 75px; justify-content: center;}
+.about-colorblind {width: 300px; height: 200px; justify-content: center;}
+.cb-form {text-align: center;}
 
 .title {text-align: center;}
 .header {text-align: center;}

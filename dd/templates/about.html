@@ -26,102 +26,100 @@
                 <h3 class = "raw header">Data Aggregate</h3>
                 <h6 class = "raw text">Open Data - Nova Scotia</h6>
             </div>
-            <div class = "panel flexv c4d">
+            <div class = "about-colorblind panel flexv c4d">
                 <h3 class = "raw header">Colorblind Options</h3>
-                <div class = "panel flexh">
-                    <form onsubmit="colorType()">
-                        <input type = "radio" name = "colorblind" value = "n" checked>Normal<br>
-                        <input type = "radio" name = "colorblind" value = "d">Deuteranopia<br>
-                        <input type = "radio" name = "colorblind" value = "p">Protanopia<br>
-                        <input type = "radio" name = "colorblind" value = "t">Tritanopia<br>
-                        <input type="submit">
-                    </form>
-                    <script>
-                        function colorType() 
+                <form class = "cb-form" onsubmit="colorType()">
+                    <input type = "radio" name = "colorblind" value = "n">Normal<br>
+                    <input type = "radio" name = "colorblind" value = "d">Deuteranopia<br>
+                    <input type = "radio" name = "colorblind" value = "p">Protanopia<br>
+                    <input type = "radio" name = "colorblind" value = "t">Tritanopia<br>
+                    <input type="submit">
+                </form>
+                <script>
+                    function colorType() 
+                    {
+
+                        var type = document.querySelector('input[name="colorblind"]:checked').value;
+
+                        // alert(type);
+                        
+                        console.log("Changing color");
+                        switch (type)
                         {
+                            case 'n':
+                                document.documentElement.style.setProperty('--color1l', '#F16889');
+                                document.documentElement.style.setProperty('--color1',  '#EF476F');
+                                document.documentElement.style.setProperty('--color1d', '#C4476F');
 
-                            var type = document.querySelector('input[name="colorblind"]:checked').value;
+                                document.documentElement.style.setProperty('--color2l', '#FFD981');
+                                document.documentElement.style.setProperty('--color2' , '#FFD166');
+                                document.documentElement.style.setProperty('--color2d', '#D1AC54');
 
-                            // alert(type);
-                            
-                            console.log("Changing color");
-                            switch (type)
-                            {
-                                case 'n':
-                                    document.documentElement.style.setProperty('--color1l', '#F16889');
-                                    document.documentElement.style.setProperty('--color1',  '#EF476F');
-                                    document.documentElement.style.setProperty('--color1d', '#C4476F');
-    
-                                    document.documentElement.style.setProperty('--color2l', '#FFD981');
-                                    document.documentElement.style.setProperty('--color2' , '#FFD166');
-                                    document.documentElement.style.setProperty('--color2d', '#D1AC54');
-    
-                                    document.documentElement.style.setProperty('--color3l', '#33DDB1');
-                                    document.documentElement.style.setProperty('--color3' , '#06D6A0');
-                                    document.documentElement.style.setProperty('--color3d', '#05B083');
-    
-                                    document.documentElement.style.setProperty('--color4l', '#3C9FC0');
-                                    document.documentElement.style.setProperty('--color4' , '#118AB2');
-                                    document.documentElement.style.setProperty('--color4d', '#0E7192');
-                                    break;
-                                case 'd':
-                                    document.documentElement.style.setProperty('--color1l', '#F16889');
-                                    document.documentElement.style.setProperty('--color1' , '#F16889');
-                                    document.documentElement.style.setProperty('--color1d', '#F16889');
-    
-                                    document.documentElement.style.setProperty('--color2l', '#F16889');
-                                    document.documentElement.style.setProperty('--color2' , '#F16889');
-                                    document.documentElement.style.setProperty('--color2d', '#F16889');
-    
-                                    document.documentElement.style.setProperty('--color3l', '#F16889');
-                                    document.documentElement.style.setProperty('--color3' , '#F16889');
-                                    document.documentElement.style.setProperty('--color3d', '#F16889');
-    
-                                    document.documentElement.style.setProperty('--color4l', '#F16889');
-                                    document.documentElement.style.setProperty('--color4' , '#F16889');
-                                    document.documentElement.style.setProperty('--color4d', '#F16889');
-                                    console.log("d-type");
-                                    break;
-                                case 'p':
-                                    document.documentElement.style.setProperty('--color1l', '#F16889');
-                                    document.documentElement.style.setProperty('--color1' , '#F16889');
-                                    document.documentElement.style.setProperty('--color1d', '#F16889');
-    
-                                    document.documentElement.style.setProperty('--color2l', '#F16889');
-                                    document.documentElement.style.setProperty('--color2' , '#F16889');
-                                    document.documentElement.style.setProperty('--color2d', '#F16889');
-    
-                                    document.documentElement.style.setProperty('--color3l', '#F16889');
-                                    document.documentElement.style.setProperty('--color3' , '#F16889');
-                                    document.documentElement.style.setProperty('--color3d', '#F16889');
-    
-                                    document.documentElement.style.setProperty('--color4l', '#F16889');
-                                    document.documentElement.style.setProperty('--color4' , '#F16889');
-                                    document.documentElement.style.setProperty('--color4d', '#F16889');
-                                    break;
-                                case 't':
-                                    document.documentElement.style.setProperty('--color1l', '#F16889');
-                                    document.documentElement.style.setProperty('--color1' , '#F16889');
-                                    document.documentElement.style.setProperty('--color1d', '#F16889');
-    
-                                    document.documentElement.style.setProperty('--color2l', '#F16889');
-                                    document.documentElement.style.setProperty('--color2' , '#F16889');
-                                    document.documentElement.style.setProperty('--color2d', '#F16889');
-    
-                                    document.documentElement.style.setProperty('--color3l', '#F16889');
-                                    document.documentElement.style.setProperty('--color3' , '#F16889');
-                                    document.documentElement.style.setProperty('--color3d', '#F16889');
-                                    
-                                    document.documentElement.style.setProperty('--color4l', '#F16889');
-                                    document.documentElement.style.setProperty('--color4' , '#F16889');
-                                    document.documentElement.style.setProperty('--color4d', '#F16889');
-                                    break;
-                                default:
-                                    console.log("NO MATCH");
-                            }
+                                document.documentElement.style.setProperty('--color3l', '#33DDB1');
+                                document.documentElement.style.setProperty('--color3' , '#06D6A0');
+                                document.documentElement.style.setProperty('--color3d', '#05B083');
+
+                                document.documentElement.style.setProperty('--color4l', '#3C9FC0');
+                                document.documentElement.style.setProperty('--color4' , '#118AB2');
+                                document.documentElement.style.setProperty('--color4d', '#0E7192');
+                                break;
+                            case 'd':
+                                document.documentElement.style.setProperty('--color1l', '#F16889');
+                                document.documentElement.style.setProperty('--color1' , '#F16889');
+                                document.documentElement.style.setProperty('--color1d', '#F16889');
+
+                                document.documentElement.style.setProperty('--color2l', '#F16889');
+                                document.documentElement.style.setProperty('--color2' , '#F16889');
+                                document.documentElement.style.setProperty('--color2d', '#F16889');
+
+                                document.documentElement.style.setProperty('--color3l', '#F16889');
+                                document.documentElement.style.setProperty('--color3' , '#F16889');
+                                document.documentElement.style.setProperty('--color3d', '#F16889');
+
+                                document.documentElement.style.setProperty('--color4l', '#F16889');
+                                document.documentElement.style.setProperty('--color4' , '#F16889');
+                                document.documentElement.style.setProperty('--color4d', '#F16889');
+                                console.log("d-type");
+                                break;
+                            case 'p':
+                                document.documentElement.style.setProperty('--color1l', '#F16889');
+                                document.documentElement.style.setProperty('--color1' , '#F16889');
+                                document.documentElement.style.setProperty('--color1d', '#F16889');
+
+                                document.documentElement.style.setProperty('--color2l', '#F16889');
+                                document.documentElement.style.setProperty('--color2' , '#F16889');
+                                document.documentElement.style.setProperty('--color2d', '#F16889');
+
+                                document.documentElement.style.setProperty('--color3l', '#F16889');
+                                document.documentElement.style.setProperty('--color3' , '#F16889');
+                                document.documentElement.style.setProperty('--color3d', '#F16889');
+
+                                document.documentElement.style.setProperty('--color4l', '#F16889');
+                                document.documentElement.style.setProperty('--color4' , '#F16889');
+                                document.documentElement.style.setProperty('--color4d', '#F16889');
+                                break;
+                            case 't':
+                                document.documentElement.style.setProperty('--color1l', '#F16889');
+                                document.documentElement.style.setProperty('--color1' , '#F16889');
+                                document.documentElement.style.setProperty('--color1d', '#F16889');
+
+                                document.documentElement.style.setProperty('--color2l', '#F16889');
+                                document.documentElement.style.setProperty('--color2' , '#F16889');
+                                document.documentElement.style.setProperty('--color2d', '#F16889');
+
+                                document.documentElement.style.setProperty('--color3l', '#F16889');
+                                document.documentElement.style.setProperty('--color3' , '#F16889');
+                                document.documentElement.style.setProperty('--color3d', '#F16889');
+                                
+                                document.documentElement.style.setProperty('--color4l', '#F16889');
+                                document.documentElement.style.setProperty('--color4' , '#F16889');
+                                document.documentElement.style.setProperty('--color4d', '#F16889');
+                                break;
+                            default:
+                                console.log("NO MATCH");
                         }
-                    </script>
-                </div>
+                    }
+                </script>
             </div>
         </div>
     </div>
