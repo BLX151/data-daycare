@@ -44,71 +44,103 @@
 
     <div class = "flexh fgrow">
         <div class = "d-panel panel">
-            {% if daycare_info["annual_inspection"] %}
-            <p>Latest announced inspection: {{daycare_info["annual_inspection"]}}</p>
-            {% endif %}
-            
-            {% if daycare_info["annual_unannounced_inspection"] %}
-                <p>Latest unannounced inspection: {{daycare_info["annual_unannounced_inspection"]}}</p>
-            {% endif %}
-            
-            {% if daycare_info["phone"] %}
-                <p>Phone: {{daycare_info["phone"]}}</p>
-            {% endif %}
-            
-            {% if daycare_info["email"] %}
-                <p>Email: {{daycare_info["email"]}}</p>
-            {% endif %}
-            
-            <p>Address: {{ daycare_info["address"] }}, {{ daycare_info["city"] }}, {{ daycare_info["postal"] }}</b></p>
-            
-            <p>Care options:
-                {% if daycare_info["prog_full_day"] == "Yes" %}
-                    Full-day   
-                {% endif %}
-            
-                {% if daycare_info["prog_part_day"] == "Yes" %}
-                    Part-day   
-                {% endif %}
-            
-                {% if daycare_info["prog_school_age"] == "Yes" %}
-                    School-day
-                {% endif %}
-            </p>
-            
-            <p>Care ages: 
-                {% if daycare_info["age_infant"] == "Yes" %}
-                    Infant   
-                {% endif %}
-            
-                {% if daycare_info["age_toddler"] == "Yes" %}
-                    Toddler
-                {% endif %}
-            
-                {% if daycare_info["age_preschool"] == "Yes" %}
-                    Preschool
-                {% endif %}
-            
-                {% if daycare_info["age_school_age"] == "Yes" %}
-                    School-age 
-                {% endif %}
-            
-                {% if daycare_info["age_range"] %}
-                    ({{daycare_info["age_range"]}})
-                {% endif %}
-            </p>
-            
-            {% if daycare_info["total_licance_capacity"] %}
-                <p>Total care capacity: {{daycare_info["total_licance_capacity"]}}</p>
-            {% endif %}
-            
-            {% if daycare_info["facility_identifier"] %}
-                <p>Registered daycare number: {{daycare_info["facility_identifier"]}}</p>
-            {% endif %}
+            <pre>
+          .-"''-.  _
+          .'       `( \
+        @/            ')   ,--,__,-"
+        /        /      \ /     /   _/
+      __|           ,   |/         /
+    .~  `\   / \ ,  |   /
+  .~      `\    `  /  _/   _/
+.~          `\  ~~`__/    /
+~             `--'/
+             /   /    /
+            /  /'    
+            </pre>
         </div>
 
         <div class = "m-panel panel fgrow">
-
+            <style>
+                table, th, td {
+                  border: 3px solid black;
+                  border-collapse: collapse;
+                  padding: 5px;
+                }
+            </style>
+            <table style="width:100%", bgcolor="lightgrey", padding-top="10px">
+                <tr>
+                  <td>Latest announced inspection</td>
+                  <td>{{daycare_info["annual_inspection"]}}</td> 
+                </tr>
+                <tr>
+                  <td>Latest unannounced inspection</td>
+                  <td>{{daycare_info["annual_unannounced_inspection"]}}</td>
+                </tr>
+                <tr>
+                  <td>Phone</td>
+                  <td>{{daycare_info["phone"]}}</td>
+                </tr>
+                <tr>
+                  <td>Email</td>
+                  <td>{{daycare_info["email"]}}</td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td>{{ daycare_info["address"] }}, {{ daycare_info["city"] }}, {{ daycare_info["postal"] }}</td>
+                </tr>
+                <tr>
+                    <td>Care options</td>
+                    <td>
+                        {% if daycare_info["prog_full_day"] == "Yes" %}
+                            Full-day   
+                        {% endif %}
+                    
+                        {% if daycare_info["prog_part_day"] == "Yes" %}
+                            Part-day   
+                        {% endif %}
+                    
+                        {% if daycare_info["prog_school_age"] == "Yes" %}
+                            School-day
+                        {% endif %}
+                    </td>
+                </tr>
+                <tr>
+                    <td>Care ages</td>
+                    <td>
+                        {% if daycare_info["age_infant"] == "Yes" %}
+                            Infant   
+                        {% endif %}
+                    
+                        {% if daycare_info["age_toddler"] == "Yes" %}
+                            Toddler
+                        {% endif %}
+                    
+                        {% if daycare_info["age_preschool"] == "Yes" %}
+                            Preschool
+                        {% endif %}
+                    
+                        {% if daycare_info["age_school_age"] == "Yes" %}
+                            School-age 
+                        {% endif %}
+                    
+                        {% if daycare_info["age_range"] %}
+                            ({{daycare_info["age_range"]}})
+                        {% endif %}
+                    </td>
+                </tr>
+                <tr>
+                    <td>Total care capacity</td>
+                    <td>
+                        {{daycare_info["total_licance_capacity"]}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>Registered daycare number</td>
+                    <td>
+                        {{daycare_info["facility_identifier"]}}
+                    </td>
+                </tr>
+            </table>
         </div>
     </div>
     

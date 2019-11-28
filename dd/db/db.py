@@ -1,10 +1,11 @@
-import requests, json, sys
+import requests, json, sys, os
 from math import radians, cos, sin, sqrt, atan2
 
+json_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "db.json")
 # UPDATE DATABASE FILE
 # ============================================================================================================
 def updateDatabase(database):
-    with open("dd/db/db.json", "w") as databaseFile:  # Opening database.json as truncate 
+    with open(json_path, "w") as databaseFile:  # Opening database.json as truncate 
         json.dump(database, databaseFile) # Dump the data into the file using the json class
 # ============================================================================================================
 
@@ -17,7 +18,7 @@ def fetchDatabase():
 # RETURN DATABASE AS DICT
 # ============================================================================================================
 def getDatabase():
-    with open("dd/db/db.json") as databaseFile: # Open the file as read only
+    with open(json_path) as databaseFile: # Open the file as read only
         return json.load(databaseFile) # Return the database file as a dictionary using the json class
 # ============================================================================================================
 
@@ -110,6 +111,7 @@ def getByDistance(maxDistance, amount, user_geoData):
     database = getDatabase()
     nearby = [] # Empty list
     for daycare in database:
+
         if ('location' in daycare): # Check to make sure it has a location
             distance = getDistance( # Get the distance between the two coords
                 user_geoData["latitude"], user_geoData["longitude"], # User lat and lon

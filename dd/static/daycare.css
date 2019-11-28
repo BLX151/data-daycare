@@ -5,7 +5,6 @@
     --bg-colord: rgb(196,  59,  91);
 }
 
-
 .t-panel
 {
     background-color: var(--bg-color);
@@ -18,3 +17,45 @@
 {
     background-color: var(--bg-color);
 }
+
+{% extends 'layout.html' %}
+
+{% block head %}
+
+<link rel = "stylesheet" href = "{{ url_for('static', filename = 'daycare.css') }}">
+
+{% endblock head %}
+
+{% block content %}
+
+<script>
+    var colors = ['#EF476F', '#FFD166', '#06D6A0', '#118AB2'];
+    var color = colors[Math.floor(Math.random() * colors.length)];
+    switch (color)
+    {
+        case '#EF476F':
+            document.documentElement.style.setProperty('--bg-colorl', '#F16889');
+            document.documentElement.style.setProperty('--bg-color', color);
+            document.documentElement.style.setProperty('--bg-colord', '#C4476F');
+            break;
+        case '#FFD166':
+            document.documentElement.style.setProperty('--bg-colorl', '#FFD981');
+            document.documentElement.style.setProperty('--bg-color', color);
+            document.documentElement.style.setProperty('--bg-colord', '#D1AC54');
+            break;
+        case '#06D6A0':
+            document.documentElement.style.setProperty('--bg-colorl', '#33DDB1');
+            document.documentElement.style.setProperty('--bg-color', color);
+            document.documentElement.style.setProperty('--bg-colord', '#05B083');
+            break;
+        case '#118AB2':
+            document.documentElement.style.setProperty('--bg-colorl', '#3C9FC0');
+            document.documentElement.style.setProperty('--bg-color', color);
+            document.documentElement.style.setProperty('--bg-colord', '#0E7192');
+            break;
+    }
+</script>
+
+
+{% endblock content %}
+
