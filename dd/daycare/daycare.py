@@ -1,6 +1,6 @@
 # All of the imports required for blueprint pages
 from flask import Blueprint, render_template
-from db import db
+from dd.db import db
 
 daycare = Blueprint('daycare', 'daycare', url_prefix='/daycare')
 
