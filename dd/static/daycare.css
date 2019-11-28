@@ -13,7 +13,7 @@
 
 
 .info {
-    text-align: center;
+    justify-content: center;
 }
 .bold {
     line-height: 30px;
