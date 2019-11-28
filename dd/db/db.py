@@ -79,6 +79,8 @@ def getDistance(lat1, lon1, lat2, lon2):
 # THIS IS A PEICE OF SHIT, don't touch, it works somehow
 # could be refactored so it will sort by any term
 def sortByDistance(nearby):
+    if not nearby:
+        return nearby
     notSorted, noChange, i = True, True, 0 # Set conditional variables
     while (notSorted): # As long as the list is not sorted
         noChange = True # Reset the noChange to default

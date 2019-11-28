@@ -22,7 +22,6 @@ def getUserGeoData():
 # The home route
 @app.route('/home')
 def home():
-    #return getUserGeoData()
     nearby = db.getByDistance(25, 15, getUserGeoData())
     
     return render_template('home.html', nearby = nearby)
