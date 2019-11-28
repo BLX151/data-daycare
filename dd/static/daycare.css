@@ -1,0 +1,25 @@
+
+:root {
+    --bg-colorl: rgb(241, 104, 137);
+    --bg-color:  rgb(239,  71, 111);
+    --bg-colord: rgb(196,  59,  91);
+}
+
+
+.c-panel
+{
+    background-color: var(--bg-color);
+}
+
+
+.info {
+    justify-content: center;
+}
+.bold {
+    line-height: 30px;
+    margin: 4px 8px;
+}
+.reg {
+    line-height: 30px;
+    margin: 4px 8px;
+}

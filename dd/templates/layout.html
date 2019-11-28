@@ -1,6 +1,9 @@
-<html class = "raw">
+<html>
     <head>
         <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Paytone+One">
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Nunito">
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Days+One">
         <link rel = "stylesheet" href = "{{ url_for('static', filename = 'layout.css') }}">
         <title>Data Daycare</title>
 
@@ -9,20 +12,26 @@
         {% endblock head %}
     </head>
 
-    <body class = "raw">
-        <div class = "flexv fill">
-            <div class = "nav-bar flexh white">
-                <a class = "nav-button home-text c1" href = "{{ url_for('home') }}">Home</a>
-                <a class = "nav-button map-text c2" href = "{{ url_for('map') }}">Map</a>
-                <a class = "nav-button directory-text c3" href = "{{ url_for('directory') }}">Directory</a>
-                <a class = "nav-button about-text c4" href = "{{ url_for('about') }}">About</a>
+    <body>
+        <div class = "flexv fit">
+            <div class = "flexh white">
+                <a class = "panel nav-btn fgrow home-text c1" href = "{{ url_for('home') }}">
+                    <h3 class = "title">HOME</h3>
+                </a>
+                <a class = "panel nav-btn fgrow map-text c2" href = "{{ url_for('map') }}">
+                    <h3 class = "title">MAP</h3>
+                </a>
+                <a class = "panel nav-btn fgrow dir-text c3" href = "{{ url_for('directory') }}">
+                    <h3 class = "title ">DIRECTORY</h3>
+                </a>
+                <a class = "panel nav-btn fgrow about-text c4" href = "{{ url_for('about') }}">
+                    <h3 class = "title">ABOUT</h3>
+                </a>
             </div>
     
-            <div class = "content flexv">
             {% block content %}
     
             {% endblock content %}
-            </div>
         </div>
     </body>
 </html>

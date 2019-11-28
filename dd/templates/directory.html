@@ -3,230 +3,52 @@
 {% block head %}
 
     <link rel="stylesheet" href="{{ url_for('static', filename = 'directory.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'filter.css') }}">
 
 {% endblock head %}
 
 
 {% block content %}
 
-    <div class = "directory flexh">
+    <div class = "scroll-parent flexh">
         
-        <div class = "list c3">
-            <div class = "list-items flexv">
+        <div class = "panel scroll-parent flexv fgrow c3">
+            <h2 class = "title">Daycares</h2>
+            <div class = "scroll flexv">
                 {% for daycare in database %}
-                <a class="daycare-wrap" href = "/daycare/{{ daycare['index']}}">
-                    <h3 class="raw daycare-name"> {{ daycare["facility_name"] }}</h3>
+                <a class="scroll-item panel daycare link c3d" href = "/daycare/{{ daycare['index']}}">
+                    <h4 class = "raw center"> {{ daycare["facility_name"] }}</h4>
+                    <h5 class = "raw center"><i>{{ daycare["address"] }}, {{ daycare["city"] }}</i></h5>
+                    <p class = "raw center"><b>Ages:</b> {{ daycare["age_range"] }} ~ <b>Capacity:</b> {{ daycare["total_licance_capacity"] }} </p>
+                    <p class = "raw center"><b>Phone:</b> {{ daycare["phone"] }} ~ <b>Email:</b> {{ daycare["email"] }}</p>
+                    <p class = "raw center"></p>
                 </a>
                 {% endfor %}
             </div>
         </div>
+
+        <div class="filter panel flexv c3">
+            <h2 class="title">Filters</h2>
+    
+            <form class = "fgrow flexv" method = "POST" autocomplete = "off" action = "{{url_for('directory')}}">
+    
+            {% include 'filter.html' %}
+    
+            </form>
         
-        <div class = "filter c3">
-            
-            <h3 class = "raw filter-text">FILTERS</h3>
-
-                <form method = "POST" action = "{{ url_for('filterDirectory') }}">
-                    <div class = "filter-items flexv">
-                        
-                        <select class = "filter-select" name = "county">
-                            <option value="noSelection"> Any County </option>
-                            <option value="Antigonish County"> Antigonish </option>
-                            <option value="Halifax County"> Halifax </option>
-                            <option value="Cumberland County"> Cumberland </option>
-                            <option value="Kings County"> Kings </option>
-                            <option value="Cape Breton County"> Cape Breton </option>
-                            <option value="Colchester County"> Colchester </option>
-                            <option value="Richmond County"> Richmond </option>
-                            <option value="Shelburne County"> Shelburne </option>
-                            <option value="Annapolis County"> Annapolis </option>
-                            <option value="Yarmouth County"> Yarmouth </option>
-                            <option value="Queens County"> Queens </option>
-                            <option value="Inverness County"> Inverness </option>
-                            <option value="Pictou County"> Pictou </option>
-                            <option value="Lunenburg County"> Lunenburg </option>
-                            <option value="Hants County"> Hants </option>
-                            <option value="Digby County"> Digby </option>
-                        </select>
-        
-                        <select class = "filter-select" name='city'>
-                            <option value="noSelection"> Any City </option>
-                            <option value="Westville"> Westville </option>
-                            <option value="Cfb Greenwood"> Cfb Greenwood </option>
-                            <option value="Antigonish"> Antigonish </option>
-                            <option value="Barrington Passage"> Barrington Passage </option>
-                            <option value="Hammonds Plains"> Hammonds Plains </option>
-                            <option value="Debert"> Debert </option>
-                            <option value="Port Hawkesbury"> Port Hawkesbury </option>
-                            <option value="Bridgewater"> Bridgewater </option>
-                            <option value="Parrsboro"> Parrsboro </option>
-                            <option value="Truro"> Truro </option>
-                            <option value="Cole Harbour"> Cole Harbour </option>
-                            <option value="Clark's Harbour"> Clark's Harbour </option>
-                            <option value="Enfield"> Enfield </option>
-                            <option value="Yarmouth"> Yarmouth </option>
-                            <option value="Lawrencetown"> Lawrencetown </option>
-                            <option value="Dartmouth"> Dartmouth </option>
-                            <option value="Shubenacadie"> Shubenacadie </option>
-                            <option value="St. Peter's"> St. Peter's </option>
-                            <option value="Salmon River"> Salmon River </option>
-                            <option value="Milton Highlands"> Milton Highlands </option>
-                            <option value="Hatchet Lake"> Hatchet Lake </option>
-                            <option value="Lockeport"> Lockeport </option>
-                            <option value="Dutch Settlement"> Dutch Settlement </option>
-                            <option value="Chester"> Chester </option>
-                            <option value="Oxford"> Oxford </option>
-                            <option value="Brookdale"> Brookdale </option>
-                            <option value="Halifax"> Halifax </option>
-                            <option value="Shearwater"> Shearwater </option>
-                            <option value="Stoney Island"> Stoney Island </option>
-                            <option value="Mount Pleasant"> Mount Pleasant </option>
-                            <option value="Lunenburg"> Lunenburg </option>
-                            <option value="Westmount"> Westmount </option>
-                            <option value="Tatamagouche"> Tatamagouche </option>
-                            <option value="Prospect Bay"> Prospect Bay </option>
-                            <option value="Chéticamp"> Chéticamp </option>
-                            <option value="Bedford"> Bedford </option>
-                            <option value="Pictou"> Pictou </option>
-                            <option value="Upper Tantallon"> Upper Tantallon </option>
-                            <option value="Hubley"> Hubley </option>
-                            <option value="Whycocomagh"> Whycocomagh </option>
-                            <option value="Valley"> Valley </option>
-                            <option value="North Preston"> North Preston </option>
-                            <option value="Lower South River"> Lower South River </option>
-                            <option value="Canning"> Canning </option>
-                            <option value="Cambridge"> Cambridge </option>
-                            <option value="Berwick"> Berwick </option>
-                            <option value="Trenton"> Trenton </option>
-                            <option value="Arichat"> Arichat </option>
-                            <option value="New Ross"> New Ross </option>
-                            <option value="Brookfield"> Brookfield </option>
-                            <option value="Middle Sackville"> Middle Sackville </option>
-                            <option value="Kentville"> Kentville </option>
-                            <option value="Bible Hill"> Bible Hill </option>
-                            <option value="Brooklyn"> Brooklyn </option>
-                            <option value="Mira Road"> Mira Road </option>
-                            <option value="Caledonia"> Caledonia </option>
-                            <option value="Porters Lake"> Porters Lake </option>
-                            <option value="Gaspereau"> Gaspereau </option>
-                            <option value="Wilmot"> Wilmot </option>
-                            <option value="Windsor"> Windsor </option>
-                            <option value="East Preston"> East Preston </option>
-                            <option value="Waverley"> Waverley </option>
-                            <option value="Port Williams"> Port Williams </option>
-                            <option value="Digby"> Digby </option>
-                            <option value="Stellarton"> Stellarton </option>
-                            <option value="Shelburne"> Shelburne </option>
-                            <option value="Beaver Bank"> Beaver Bank </option>
-                            <option value="Masstown"> Masstown </option>
-                            <option value="Little Bras D'or"> Little Bras D'or </option>
-                            <option value="Sydney Mines"> Sydney Mines </option>
-                            <option value="Lantz"> Lantz </option>
-                            <option value="Wolfville Ridge"> Wolfville Ridge </option>
-                            <option value="Hubbards"> Hubbards </option>
-                            <option value="Middleton"> Middleton </option>
-                            <option value="Lake Echo"> Lake Echo </option>
-                            <option value="Greenwood"> Greenwood </option>
-                            <option value="Meteghan"> Meteghan </option>
-                            <option value="Grand Lake Road"> Grand Lake Road </option>
-                            <option value="New Glasgow"> New Glasgow </option>
-                            <option value="West Pubnico"> West Pubnico </option>
-                            <option value="Auburn"> Auburn </option>
-                            <option value="West Gore"> West Gore </option>
-                            <option value="Timberlea"> Timberlea </option>
-                            <option value="Liverpool"> Liverpool </option>
-                            <option value="Osborne Harbour"> Osborne Harbour </option>
-                            <option value="Stewiacke"> Stewiacke </option>
-                            <option value="Middle Musquodoboit"> Middle Musquodoboit </option>
-                            <option value="Springhill"> Springhill </option>
-                            <option value="Lower Sackville"> Lower Sackville </option>
-                            <option value="Eastern Passage"> Eastern Passage </option>
-                            <option value="Coxheath"> Coxheath </option>
-                            <option value="Cookville"> Cookville </option>
-                            <option value="Coldbrook"> Coldbrook </option>
-                            <option value="Sydney River"> Sydney River </option>
-                            <option value="Meteghan Centre"> Meteghan Centre </option>
-                            <option value="Post Road"> Post Road </option>
-                            <option value="New Waterford"> New Waterford </option>
-                            <option value="Beechville"> Beechville </option>
-                            <option value="Howie Centre"> Howie Centre </option>
-                            <option value="Tusket"> Tusket </option>
-                        </select>
-            
-                        <div class = "flexv filter-wrap">
-                            <h6 class = "raw filter-caption">Minimum Child Capacity</h6>
-                            <input class = "filter-input" type="text" name='min_capacity'> 
-                        </div>
-                        
-                        <div class = "flexv filter-wrap">
-                            <h6 class = "raw filter-caption">Maximum Child Capacity</h6>
-                            <input class = "filter-input" type="text" name='max_capacity'> 
-                        </div>
-                        
-                        <div class = "filter-section">
-                            <h5 class = "raw filter-section-title">Ages</h5>
-                        </div>
-
-                        <div class = "flexh">
-                            <input type="checkbox" name='age_infant'>
-                            <h6 class = "raw">Infant Age</h6>
-                            </input>
-                        </div>
-
-                        <div class = "flexh">
-                            <input type="checkbox" name='age_toddler'>
-                            <h6 class = "raw">Toddler Age</h6>
-                            </input>
-                        </div>
-        
-                        <div class = "flexh">
-                            <input type="checkbox" name='age_preschool'>
-                            <h6 class = "raw">Preschool Age</h6>
-                            </input>
-                        </div>
-        
-                        <div class = "flexh">
-                            <input type="checkbox" name='age_school_age'>
-                            <h6 class = "raw">School Age</h6>
-                            </input>
-                        </div>
-
-                        <div class = "filter-section">
-                            <h5 class = "raw filter-section-title">Programs</h5>
-                        </div>
-
-                        <div class = "flexh">
-                            <input type="checkbox" name='prog_full_day'>
-                            <h6 class = "raw">Full Day Program</h6>
-                            </input>
-                        </div>
-        
-                        <div class = "flexh">
-                            <input type="checkbox" name='prog_part_day'>
-                            <h6 class = "raw">Part Day Program</h6>
-                            </input>
-                        </div>
-                        
-                        <div class = "flexh">
-                            <input type="checkbox" name='annualInspection'>
-                            <h6 class = "raw">Annual Inspection Recorded</h6>
-                            </input>
-                        </div>
-
-                        <div class = "flexh">
-                            <input type="checkbox" name='unannouncedInspection'>
-                            <h6 class = "raw">Unannounced Inspection Recorded</h6>
-                            </input>
-                        </div>
-                        
-                        <button type = "submit">Submit</button>
-
-                    </div>
-                </form>
-            </div>
-
-           
+            <script>
+                window.onbeforeunload = function()
+                {
+                    sessionStorage.setItem("county", $('#county').val());
+                };
+                window.onload = function() 
+                {
+                    if (sessionStorage.getItem("county") !== null) $('county').val("");
+                };
+            </script>
+    
         </div>
-        </div>
+
     </div>
 
 {% endblock content %}

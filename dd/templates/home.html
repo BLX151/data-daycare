@@ -7,30 +7,32 @@
 {% endblock head %}
 
 {% block content %}
-        <div class = "home flexh">
+    <div class = "scroll-parent flexh">
 
-            <div class = "main flexv c1">
-                <div class = "title-wrap">
-                    <h1 class = "title-text">Data Daycare</h1>
-                </div>
+        <div class = "main panel fgrow flexv c1">
+            <div class = "cont">
+                <h1 class = "raw dd">Data Daycare</h1>
+                <h4 class = "raw sub-title">Your one stop shop for quality daycares</h4>
             </div>
-
-            <div class = "nearby flexv c1">
-                <h2 class = "raw nearby-text">Nearby Daycares</h2>
-                <div class = " nearby-items flexv">
-                    {% for daycare in nearby %}
-                    <a class = "nearby-wrap c1d" href = "daycare/{{ daycare['index'] }}">
-                        <h4 class = "raw nearby-name">{{ daycare["facility_name"] }}</h4>
-                        <h5 class = "raw nearby-address">{{ daycare["address"] }}, {{ daycare["city"] }}</h5>
-                        <h6 class = "raw nearby-sub-item1">Ages: {{ daycare["age_range"] }}</h6>
-                        <div class = "nearby-sub flexh">
-                            <h6 class = "raw nearby-sub-item2">Phone: {{ daycare["phone"] }}</h6>
-                            <h6 class = "raw">Email: {{ daycare["email"] }}</h6>
-                        </div>
-                    </a>
-                    {% endfor %}
-                </div>
-            </div>
-
         </div>
+
+        <div class = "nearby panel scroll-parent flexv c1">
+            <h2 class = "title">Nearby Daycares</h2>
+            
+            <div class = "scroll flexv">    
+                {% for daycare in nearby %}
+                <a class = "panel daycare link c1d" href = "daycare/{{ daycare['index'] }}">
+                    <h4 class = "raw name">{{ daycare["facility_name"] }}</h4>
+                    <h5 class = "raw address">{{ daycare["address"] }}, {{ daycare["city"] }}</h5>
+                    <p class = "raw age">Ages: {{ daycare["age_range"] }}</p>
+                    <p class = "raw phone">Phone: {{ daycare["phone"] }}</p>
+                    <p class = "raw email">Email: {{ daycare["email"] }}</p>
+                </a>
+                
+                {% endfor %}
+            </div>
+        
+        </div>
+
+    </div>
 {% endblock content %}

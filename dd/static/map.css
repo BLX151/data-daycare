@@ -1,3 +1,8 @@
-.map-container {flex-grow: 1;}
-.map {height: 100%; flex-grow: 1;}
-.filter {width: 400px;}
+
+.map-panel {padding: 8px 8px;}
+.map {height: 100%; flex-grow: 1; border-radius: 10px;}
+
+.color  {background-color: rgb(255, 209, 102);}
+.colord {background-color: rgb(209, 172,  84);}
+
+.submit:hover {background-color: white; color: rgb(255, 209, 102);}

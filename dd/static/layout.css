@@ -1,66 +1,83 @@
-/*  THIS IS LESS OF A MESS OF BULLSHIT NOW
-    Before you attempt to do anything with anything here, please come to me
-    and ask me how this works and how I have everything laid out. I'm not 
-    even going to attempt to comment any of this bullshit out because it's
-    all worthless.
-    
-    Thanks for coming to me TED Talk. - Tyler */
 
+:root
+{
+--color1l: rgb(241, 104, 137);
+--color1:  rgb(239,  71, 111);
+--color1d: rgb(196,  59,  91);
+--color2l: rgb(255, 217, 129);
+--color2:  rgb(255, 209, 102);
+--color2d: rgb(209, 172,  84);
+--color3l: rgb( 51, 221, 177);
+--color3:  rgb(  6, 214, 160);
+--color3d: rgb(  5, 176, 131);
+--color4l: rgb( 60, 159, 192);
+--color4:  rgb( 17, 138, 178);
+--color4d: rgb( 14, 113, 146);
+}
+
+
+/* CONTAINERS ============================================================================================= */
+.panel {margin:4px 4px; padding:4px 4px; border-radius: 8px;}
+.cont {margin: auto;}
+/* ======================================================================================================== */
+
+/* FONTS ================================================================================================== */
+h1 {font-size:125; font-family:"Paytone One"; font-variant:small-caps;}
+h2 {font-size:50; font-family:"Paytone One"; font-variant:small-caps;}
+h3 {font-size:25; font-family:"Paytone One"; font-variant:small-caps;}
+h4 {font-size:22; font-family:"Days One"; font-variant:small-caps;}
+h5 {font-size:16; font-family:"Nunito"; font-weight:800;}
+h6 {font-size:13; font-family:"Nunito"; font-weight:800;}
+p  {font-size:13; font-family:"Nunito"; font-weight:500;}
+.title {text-align: center; margin: 4px 4px;}
+.sub-title {text-align: left; margin: 0px;}
+.center {text-align: center;}
+/* ======================================================================================================== */
+
+/* LINKS ================================================================================================== */
+.link {text-decoration: none; color: black}
+/* ======================================================================================================== */
+
+/* CONSTRAINTS ============================================================================================ */
 .raw {margin:0px; padding:0px; border:0px;}
-.fill {height:100%; width:100%;}
+.fit {height:100%; width:100%;}
+.scroll {overflow:auto;}
+.scroll-parent {overflow: hidden;}
+/* ======================================================================================================== */
 
+/* FLEXBOX ================================================================================================ */
 .flexv {display:flex; flex-direction:column;}
 .flexh {display:flex; flex-direction:row;}
+.fgrow {flex-grow: 1;}
+/* ======================================================================================================== */
 
-.wrapper {margin:5px 5px;}
 
-.c1l    {background-color: rgb(241, 104, 137);}
-.c1     {background-color: rgb(239,  71, 111);}
-.c1d    {background-color: rgb(196,  59,  91);}
-.c2l    {background-color: rgb(255, 217, 129);}
-.c2     {background-color: rgb(255, 209, 102);}
-.c2d    {background-color: rgb(209, 172,  84);}
-.c3l    {background-color: rgb( 51, 221, 177);}
-.c3     {background-color: rgb(  6, 214, 160);}
-.c3d    {background-color: rgb(  5, 176, 131);}
-.c4l    {background-color: rgb( 60, 159, 192);}
-.c4     {background-color: rgb( 17, 138, 178);}
-.c4d    {background-color: rgb( 14, 113, 146);}
-.c5l    {background-color: rgb( 52,  94, 108);}
-.c5     {background-color: rgb(  7,  59,  76);}
-.c5d    {background-color: rgb(  7,  49,  63);}
-white   {background-color: white;}
-
-h1 {font-size:70;}
-h2 {font-size:45;}
-h3 {font-size:30;}
-h4 {font-size:20;}
-h5 {font-size:15;}
-h6 {font-size:13;}
-
-.nav-bar {justify-content:space-evenly;}
-.nav-button {
-    display:block;
-    height: 35px;
-    line-height: 35px;
-    flex-grow: 1;
-    text-align: center;
-    border-radius: 8px;
-    font-size:25px;
-    color:black;
-    text-decoration:none;
-    margin-top: 8px;
-    margin-bottom: 8px;
-    margin-left: 8px;
-}
-.about-text {margin-right: 8px;}
+/* NAVBAR ================================================================================================= */
+.nav-bar {justify-content:space-evenly;padding: 4px 4px; padding-bottom: 0px;}
+.nav-btn {text-decoration: none; color: black}
 
 .home-text:hover       {background-color:white; color: rgb(241, 104, 137);}
 .map-text:hover        {background-color:white; color: rgb(255, 217, 129);}
-.directory-text:hover  {background-color:white; color: rgb( 51, 221, 177);}
+.dir-text:hover  {background-color:white; color: rgb( 51, 221, 177);}
 .about-text:hover      {background-color:white; color: rgb( 60, 159, 192);}
+/* ======================================================================================================== */
 
-.content {flex-grow:1;overflow: hidden;}
+/* COLORS ================================================================================================= */
+.c1l {background-color: var(--color1l);} 
+.c1  {background-color: var(--color1)}
+.c1d {background-color: var(--color1d)}
+.c2l {background-color: var(--color2l)}
+.c2  {background-color: var(--color2)}
+.c2d {background-color: var(--color2d)}
+.c3l {background-color: var(--color3l)}
+.c3  {background-color: var(--color3)}
+.c3d {background-color: var(--color3d)}
+.c4l {background-color: var(--color4l)}
+.c4  {background-color: var(--color4)}
+.c4d {background-color: var(--color4d)}
+.white  {background-color: white;}
+/* ======================================================================================================== */
 
-
-
+/* STYLE REQUIREMENTS ===================================================================================== */
+body {margin:0px; border:0px; padding:4px 4px;}
+/* ======================================================================================================== */
