@@ -6,15 +6,20 @@
 }
 
 
-.t-panel
+.c-panel
 {
     background-color: var(--bg-color);
 }
-.d-panel
-{
-    background-color: var(--bg-color);
+
+
+.info {
+    text-align: center;
 }
-.m-panel
-{
-    background-color: var(--bg-color);
+.bold {
+    line-height: 30px;
+    margin: 4px 8px;
+}
+.reg {
+    line-height: 30px;
+    margin: 4px 8px;
 }

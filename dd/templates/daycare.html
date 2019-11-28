@@ -38,78 +38,78 @@
 
 <div class = "fgrow flexv ">
 
-    <div class = "t-panel panel">
+    <div class = "c-panel panel">
         <h2 class = "title">{{ daycare_info["facility_name"] }}</h2>
     </div>
 
     <div class = "flexh fgrow">
-        <div class = "d-panel panel">
-            {% if daycare_info["annual_inspection"] %}
-            <p>Latest announced inspection: {{daycare_info["annual_inspection"]}}</p>
-            {% endif %}
+        
+        <div class = "c-panel panel fgrow">
+            <h2 class = "title">Contact Info</h2>
+            <div class = "flexh info">
+                <h4 class = "bold">Phone:</h4>
+                <h5 class = "reg"> {{daycare_info["phone"]}}</h5>
+            </div>
+            <div class = "flexh">
+                <h4>Email:</h4>
+                <h5> {{daycare_info["email"]}}</h5>
+            </div>
+            <div class = "flexh">
+                <h4>Address:</h4>
+                <h5> {{ daycare_info["address"] }}, {{ daycare_info["city"] }}, {{ daycare_info["postal"] }}</h5>
+            </div>
+        </div>
+        
+        <div class = "c-panel panel fgrow">
+            <h2 class = "title">Care options</h2>
+            <div class = "flexh">
+                <h4>Full-day:</h4>
+                <h5> {{daycare_info["prog_full_day"]}}</h5>   
+            </div>
+            <div class = "flexh">
+                <h4>Part-day:</h4>
+                <h5> {{daycare_info["prog_part_day"]}}</h5>   
+            </div>
+            <div class = "flexh">
+                <h4>School-day:</h4>
+                <h5> {{daycare_info["prog_school_age"]}}</h5>
+            </div>
             
-            {% if daycare_info["annual_unannounced_inspection"] %}
-                <p>Latest unannounced inspection: {{daycare_info["annual_unannounced_inspection"]}}</p>
-            {% endif %}
-            
-            {% if daycare_info["phone"] %}
-                <p>Phone: {{daycare_info["phone"]}}</p>
-            {% endif %}
-            
-            {% if daycare_info["email"] %}
-                <p>Email: {{daycare_info["email"]}}</p>
-            {% endif %}
-            
-            <p>Address: {{ daycare_info["address"] }}, {{ daycare_info["city"] }}, {{ daycare_info["postal"] }}</b></p>
-            
-            <p>Care options:
-                {% if daycare_info["prog_full_day"] == "Yes" %}
-                    Full-day   
-                {% endif %}
-            
-                {% if daycare_info["prog_part_day"] == "Yes" %}
-                    Part-day   
-                {% endif %}
-            
-                {% if daycare_info["prog_school_age"] == "Yes" %}
-                    School-day
-                {% endif %}
-            </p>
-            
-            <p>Care ages: 
-                {% if daycare_info["age_infant"] == "Yes" %}
-                    Infant   
-                {% endif %}
-            
-                {% if daycare_info["age_toddler"] == "Yes" %}
-                    Toddler
-                {% endif %}
-            
-                {% if daycare_info["age_preschool"] == "Yes" %}
-                    Preschool
-                {% endif %}
-            
-                {% if daycare_info["age_school_age"] == "Yes" %}
-                    School-age 
-                {% endif %}
-            
-                {% if daycare_info["age_range"] %}
-                    ({{daycare_info["age_range"]}})
-                {% endif %}
-            </p>
-            
-            {% if daycare_info["total_licance_capacity"] %}
-                <p>Total care capacity: {{daycare_info["total_licance_capacity"]}}</p>
-            {% endif %}
-            
-            {% if daycare_info["facility_identifier"] %}
-                <p>Registered daycare number: {{daycare_info["facility_identifier"]}}</p>
-            {% endif %}
+            <h2 class = "title">Care ages</h2>
+            <div class = "flexh">
+                <h4>Infants:</h4>
+                <h5> {{daycare_info["age_infant"]}}</h5>   
+            </div>
+            <div class = "flexh">
+                <h4>Toddlers:</h4>
+                <h5> {{daycare_info["age_toddler"]}}</h5>
+            </div>
+            <div class = "flexh">
+                <h4>Preschool-age:</h4>
+                <h5> {{daycare_info["age_preschool"]}}</h5>
+            </div>
+            <div class = "flexh">
+                <h4>School-age:</h4>
+                <h5> {{daycare_info["age_school_age"]}}</h5> 
+            </div>
+            <div class = "flexh">
+                <h4>Age Range:</h4>
+                <h5> {{daycare_info["age_range"]}}</h5>
+            </div>
         </div>
 
-        <div class = "m-panel panel fgrow">
-
+        <div class = "c-panel panel fgrow">
+            <h2 class = "title">Admin Info</h2>
+            <div class = "flexh">
+                <h4>Total care capacity:</h4>
+                <h5> {{daycare_info["total_licance_capacity"]}}</h5>
+            </div>
+            <div class = "flexh">
+                <h4>Registered daycare number:</h4>
+                <h5> {{daycare_info["facility_identifier"]}}</h5>
+            </div>
         </div>
+
     </div>
     
     

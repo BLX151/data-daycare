@@ -1,4 +1,21 @@
 
+:root
+{
+--color1l: rgb(241, 104, 137);
+--color1:  rgb(239,  71, 111);
+--color1d: rgb(196,  59,  91);
+--color2l: rgb(255, 217, 129);
+--color2:  rgb(255, 209, 102);
+--color2d: rgb(209, 172,  84);
+--color3l: rgb( 51, 221, 177);
+--color3:  rgb(  6, 214, 160);
+--color3d: rgb(  5, 176, 131);
+--color4l: rgb( 60, 159, 192);
+--color4:  rgb( 17, 138, 178);
+--color4d: rgb( 14, 113, 146);
+}
+
+
 /* CONTAINERS ============================================================================================= */
 .panel {margin:4px 4px; padding:4px 4px; border-radius: 8px;}
 .cont {margin: auto;}
@@ -46,21 +63,18 @@ p  {font-size:13; font-family:"Nunito"; font-weight:500;}
 /* ======================================================================================================== */
 
 /* COLORS ================================================================================================= */
-.c1l    {background-color: rgb(241, 104, 137);}
-.c1     {background-color: rgb(239,  71, 111);}
-.c1d    {background-color: rgb(196,  59,  91);}
-.c2l    {background-color: rgb(255, 217, 129);}
-.c2     {background-color: rgb(255, 209, 102);}
-.c2d    {background-color: rgb(209, 172,  84);}
-.c3l    {background-color: rgb( 51, 221, 177);}
-.c3     {background-color: rgb(  6, 214, 160);}
-.c3d    {background-color: rgb(  5, 176, 131);}
-.c4l    {background-color: rgb( 60, 159, 192);}
-.c4     {background-color: rgb( 17, 138, 178);}
-.c4d    {background-color: rgb( 14, 113, 146);}
-.c5l    {background-color: rgb( 52,  94, 108);}
-.c5     {background-color: rgb(  7,  59,  76);}
-.c5d    {background-color: rgb(  7,  49,  63);}
+.c1l {background-color: var(--color1l);} 
+.c1  {background-color: var(--color1)}
+.c1d {background-color: var(--color1d)}
+.c2l {background-color: var(--color2l)}
+.c2  {background-color: var(--color2)}
+.c2d {background-color: var(--color2d)}
+.c3l {background-color: var(--color3l)}
+.c3  {background-color: var(--color3)}
+.c3d {background-color: var(--color3d)}
+.c4l {background-color: var(--color4l)}
+.c4  {background-color: var(--color4)}
+.c4d {background-color: var(--color4d)}
 .white  {background-color: white;}
 /* ======================================================================================================== */
 
